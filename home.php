@@ -72,7 +72,8 @@
     <?php
         }
     }  else {
- echo "No Records.";
+
+    echo "No Records.";
 
     }
     ?>
