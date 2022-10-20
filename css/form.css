@@ -1,0 +1,38 @@
+header, footer {
+  height:400px; /* arbitrary number */
+  background:#bada55; /* arbitrary color */
+  text-align:center; /* why not?*/
+  line-height:50px; /* lets ceter that text vertically */
+}
+
+.inner {
+  margin:0 auto; /* centers the wrapper div */
+  width: 70%; /* amy number or % you want */
+  border-left:1px solid green; /* just so you can see it */
+  border-right:1px solid green; /* just so you can see it */
+}
+
+.wrapper {
+  height: 100%; /* arbitrary number for visual reference */
+  background: white; /* just because */
+  border:1px solid lightgrey; /* also just because */
+}
+
+
+.wrapper p {
+  padding:10px; /* a little bit of visual space*/
+}
+
+.panel{
+	margin: 20px;
+}
+
+.button-process{
+	color: green;
+	margin-top: 20px;
+}
+
+.button-cancel{
+	color: red;
+	margin-top: 20px;
+}
