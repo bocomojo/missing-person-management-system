@@ -206,7 +206,7 @@
                         }
                     else{      
                   
-                $sql = "INSERT INTO users(name,surname,address,username,email,image,joined,type,permission,gender,phone,tmp,password)VALUES('$name','$surname','$address','$username','$email','$location','$joined','user','$permission','$gender','$phone','$tmp','$password')";
+                $sql = "INSERT INTO users(name,surname,address,username,email,joined,type,permission,gender,phone,tmp,password)VALUES('$name','$surname','$address','$username','$email','$joined','user','$permission','$gender','$phone','$tmp','$password')";
                 $results = mysqli_query($mysqli,$sql);
   
                         
@@ -271,9 +271,9 @@
           <div class="col-lg-6">
             <label>Access Level</label>
               <select class="form-control" name="permission">
-              <option>1</option>
-              <option>2</option> 
-             <option>3</option> 
+              <option value="1">Admin</option>
+              <option value="2">Desk Officer</option> 
+              <option value="3">User</option> 
               </select>
           </div>  
           <div class="col-lg-6">

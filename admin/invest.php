@@ -238,7 +238,7 @@
         <div class="row form-group">
           <div class="col-lg-6">
             <label>EYE COLOR</label>
-              <input type="text" class="form-control" name="eyecolor" placeholder="Enter eye color" required>
+              <input type="text" class="form-control" name="eyecolor" placeholder="Enter eye color" >
           </div>   
           <div class="col-lg-6">
             <label>CHOOSE IF NATURAL, ARTIFICIAL, OR WEARS CONTACT LENSES </label>
@@ -252,11 +252,12 @@
         <div class="row form-group">
           <div class="col-lg-6">
             <label>SCARS, MARKS & TATTOOS (SMT)</label>
-              <input type="text" class="form-control" name="smt" placeholder="Describe scars, marks, or tattoos" required>
+              <input type="text" class="form-control" name="smt" placeholder="Describe scars, marks, or tattoos" >
         </div>   
           <div class="col-lg-6">
             <label>BLOOD TYPE (IF KNOWN)</label>
               <select class="form-control" name="blood">
+              <option>Unknown</option>
               <option>A+</option>
               <option>A-</option> 
               <option>B+</option>
@@ -285,7 +286,7 @@
           </div>
               <div class="col-lg-6">
             <label>LAST KNOWN CLOTHING</label>
-              <input type="text" class="form-control" name="cloth" placeholder="Enter last known clothing and indicate color" required>
+              <input type="text" class="form-control" name="cloth" placeholder="Enter last known clothing and indicate color">
           </div>
           <!--<div class="col-lg-6">
             <label>DENTAL AND FINGERPRINT RECORDS (IF AVAILABLE)</label>
@@ -348,7 +349,7 @@
           </div>
           <div class="col-lg-6">
             <label>HAVE YOU REPORTED TO OTHER AGENCY? IF YES, STATE THE AGENCY</label>
-              <input type="text" class="form-control" name="agency" placeholder="" required>
+              <input type="text" class="form-control" name="agency" placeholder="">
           </div>  
         </div>
                 

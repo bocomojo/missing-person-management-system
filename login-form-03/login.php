@@ -25,7 +25,7 @@ if(isset($mysqli,$_POST['submit'])){
 
       
       if($_SESSION["type"]=='user'){
-                    if($_SESSION['permission']==1 or $_SESSION['permission']==2 ){
+                    if($_SESSION['permission']===1 or $_SESSION['permission']===2 ){
         echo "<script>alert('Welcome!'); window.location='../admin/dashboard.php'</script>";
         } else {
           // echo "<script>alert('Welcome!'); window.location='../home.php'</script>";

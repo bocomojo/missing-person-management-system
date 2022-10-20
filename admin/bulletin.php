@@ -174,7 +174,7 @@ $(function () {
                         </a>
                     </li>
                     <?php
-                    if($_SESSION['permission']==1 or $_SESSION['permission']==2 ){
+                    if($_SESSION['permission']===1 or $_SESSION['permission']===2 ){
                         
                     
                     ?>
@@ -207,7 +207,7 @@ $(function () {
                     <?php }?>
 
                     <?php
-                    if($_SESSION['permission']==1 or $_SESSION['permission']==2 ){
+                    if($_SESSION['permission']===1 or $_SESSION['permission']===2 ){
                         
                     
                     ?>
@@ -220,7 +220,7 @@ $(function () {
                     <?php }?>
 
                     <?php
-                    if($_SESSION['permission']==1 or $_SESSION['permission']==2 ){
+                    if($_SESSION['permission']===1 or $_SESSION['permission']===2 ){
                         
                     
                     ?>
@@ -233,7 +233,7 @@ $(function () {
                     <?php }?>
 
                     <?php
-                    if($_SESSION['permission']==1  or $_SESSION['permission']==2 ){
+                    if($_SESSION['permission']===1  or $_SESSION['permission']===2 ){
                     ?>
                     <li>
                         <a href="a_users.php">
@@ -287,33 +287,142 @@ $(function () {
 
             <div class="line"></div>
                  
-      <div class="cards">
-      <?php
-    $sql= mysqli_query($mysqli,"SELECT * FROM reports ORDER BY id ASC");
-    if (!empty($sql)) { 
-        while ($row=mysqli_fetch_array($sql)) {
-        $id = $row['id'];
-    ?>
-  
-<div class="card">
-<a target="_blank" href="view_details.php?id=<?php echo $id; ?>">     
-  <img src="assets/image/missing_person/<?php echo $row["recentphoto"]; ?>" alt="Avatar" style="width:100%" class="photo">
-  </a>
-  <div class="containers">
-    <h4><b><?php echo $row["fullname"]; ?></b></h4> 
-    <p>Age: <?php echo $row["age"]; ?></p> 
-  </div>
-</div> 
+            <?php
+                    $id = $_GET['id'];
+                    $query=mysqli_query($mysqli,"select * from `reports` where id = $id");
+                     while($row=mysqli_fetch_array($query))
+                      
+                        {
+                          
+                          ?>
 
-<?php
-        }
-    }  else {
+              <center>                       
 
-    echo "No Records.";
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="1285" colspan="2" valign="top">
+                <h1 style="font-size:18vw; background-color: black">
+                    <p align="center">
+                    <strong><font color="#d42626">MISSING</font></strong>
+                    <strong></strong>
+                    </p>
+                </h1>
+            </td>
+        </tr>
+        <h3>
+        <tr>
+            <td width="849" rowspan="2" valign="top">
+                <p align="center">
+                    <strong>
+                        <br/>
+                        <br/>
+                        <br/>
+                    </strong>
+                </p>
+                <p align="center">
+                    <strong>
+                        <img
+                            width="90%"
+                            height="90%"
+                            src="admin/assets/image/missing_person/<?php echo $row["recentphoto"]; ?>"
+                        />
+                    </strong>
+                    <strong></strong>
+                </p>
+            </td>
+            <td width="436" valign="top">
+                
+                <p>
+                    <h1><strong>SUBJECT DETAILS</strong></h1>
+                </p>
+                <p>
+                    <strong></strong>
+                </p>
+                <p>
+                    <strong></strong>
+                </p>
+                <h5><p>
+                    <strong>NAME :</strong>&nbsp;&nbsp;<?php echo $row['fullname'];?>
+                </p>
+                <p>
+                    <strong>HEIGHT (CM) :</strong>&nbsp;&nbsp;<?php echo $row['height'];?>
+                </p>
+                <p>
+                    <strong>WEIGHT (KG) :</strong>&nbsp;&nbsp;<?php echo $row['weight'];?>
+                </p>
+                <p>
+                    <strong>AGE :</strong>&nbsp;&nbsp;<?php echo $row['age'];?>
+                </p>
+                <p>
+                    <strong>EYES :</strong>&nbsp;&nbsp;<?php echo $row['eyestate'];?>&nbsp;<?php echo $row['eyecolor'];?>
+                </p>
+                <p>
+                    <strong>HAIR :</strong>&nbsp;&nbsp;<?php echo $row['hairstate'];?>&nbsp;<?php echo $row['haircolor'];?>
+                </p>
+                <p>
+                    <strong>NATIONALITY :</strong>&nbsp;&nbsp;<?php echo $row['race'];?>
+                </p>
+                <p>
+                    <strong></strong><br>
+                </p>
+                <p>
+                    <strong>ADDITIONAL INFORMATION:</strong>
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['smt'];?><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['accessory'];?><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['prostet'];?><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['defect'];?>
+                </p>
+                <p>
+                    <strong></strong><br>
+                </p>
+                <p>
+                    <strong>LAST SEEN :</strong>
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Last seen on <?php echo $row['last_seen_date'];?> 
+                    in <?php echo $row['lastloc'];?><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;wearing <?php echo $row['cloth'];?>
+                </p>
+            </td>
+        </tr>
+        <tr>
+        </tr>
 
-    }
-    ?>
-</div>
+        <tr>
+            <td width="1285" colspan="2" valign="top">
+                <h1><p align="center">
+                    <strong>IF YOU HAVE INFORMATION PLEASE CONTACT</strong>
+                </p>
+                    <p align="center">
+                    <strong><?php echo $row['phone'];?></strong>
+                    <strong></strong>
+                    </p>
+                </h1>
+            </td>
+        </tr>
+        <tr>
+            <td style="font-size:8vw; background-color: red" width="1285" colspan="2" valign="top">
+                <p  align="center">
+                    <strong>HELP US PLEASE</strong>
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p align="center">
+    <strong></strong>
+</p>
+</center>
+
+                    <?php
+                          }
+                          $mysqli->close();
+                         ?>
+            </div>
+                </div>
 
             <div class="line"></div>
                 <footer>
