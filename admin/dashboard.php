@@ -160,7 +160,7 @@ $(function () {
                         </a>
                     </li>
                     <li>
-                        <a href="../home.php">
+                        <a href="view_missing_person.php">
                             <i class="fa fa-table"></i>
                             View Missing Persons
                         </a>

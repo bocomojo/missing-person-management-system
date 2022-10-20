@@ -154,14 +154,14 @@ $(function () {
                 </div>
 
                 <ul class="list-unstyled components">
-                    <li class="active">
+                    <li>
                         <a href="dashboard.php">
                             <i class="fa fa-th"></i>
                            Dashboard
                         </a>
                     </li>
-                    <li>
-                        <a href="../home.php">
+                    <li class="active">
+                        <a href="view_missing_person.php">
                             <i class="fa fa-table"></i>
                             View Missing Persons
                         </a>

@@ -36,25 +36,13 @@
                            Dashboard
                         </a>
                     </li>
-                              <?php
-                    if($_SESSION['permission']==1 or $_SESSION['permission']==2 ){
-                        
-                    
-                    ?>
-                    <li class="active">
-                        <a href="a_employees.php">
-                            <i class="fa fa-plus"></i>
-                            Add Desk Officer
-                        </a>
-                      
-                    </li>
-                    <?php }?>
                     <li>
-                        <a href="all_employees.php">
+                        <a href="view_missing_person.php">
                             <i class="fa fa-table"></i>
-                           All Desk Officers
+                            View Missing Persons
                         </a>
-                    </li>
+                    </li>   
+                   
                     <li>
                         <a href="invest.php">
                             <i class="fa fa-link"></i>
@@ -66,6 +54,19 @@
                         
                     
                     ?>
+                    <li class="active">
+                        <a href="a_employees.php">
+                            <i class="fa fa-plus"></i>
+                            Add Desk Officer
+                        </a>
+                      
+                    </li>
+                     <li>
+                        <a href="all_employees.php">
+                            <i class="fa fa-table"></i>
+                           All Desk Officers
+                        </a>
+                    </li>
                     <li>
                         <a href="v_issue.php">
                             <i class="fa fa-table"></i>
@@ -75,7 +76,7 @@
                     <li>
                         <a href="requests.php">
                             <i class="fa fa-table"></i>
-                            View Pending Reports
+                            View Pending Requests
                         </a>
                     </li>
 
@@ -87,9 +88,9 @@
                     
                     ?>
                     <li>
-                        <a href="bulletin.php">
+                        <a href="request_archives.php">
                             <i class="fa fa-table"></i>
-                            Missing Person Bulletin
+                            Request Archives
                         </a>
                     </li>
                     <?php }?>
@@ -108,7 +109,7 @@
                     <?php }?>
 
                     <?php
-                    if($_SESSION['permission']==1){
+                    if($_SESSION['permission']==1  or $_SESSION['permission']==2 ){
                     ?>
                     <li>
                         <a href="a_users.php">

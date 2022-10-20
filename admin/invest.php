@@ -37,7 +37,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="../home.php">
+                        <a href="view_missing_person.php">
                             <i class="fa fa-table"></i>
                             View Missing Persons
                         </a>
@@ -76,7 +76,7 @@
                     <li>
                         <a href="requests.php">
                             <i class="fa fa-table"></i>
-                            View Pending Reports
+                            View Pending Requests
                         </a>
                     </li>
                     <?php }?>
