@@ -183,7 +183,7 @@
                 </thead>
                     <?php
                                    $a=1;
-                    $query=mysqli_query($mysqli,"select * from `reports` ");
+                    $query=mysqli_query($mysqli,"select * from `reports` where status=0");
                      while($row=mysqli_fetch_array($query))
                       
                         {
