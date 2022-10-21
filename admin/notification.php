@@ -189,6 +189,7 @@
                     $query=mysqli_query($mysqli,"select * from `notification` where username='$username'");
                      while($row=mysqli_fetch_array($query))
                         {
+                        
                           
                           ?>
                           <tr>

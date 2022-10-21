@@ -200,7 +200,7 @@
                             <td>
                   <a href="function/accept.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-warning"><span class="fa fa-check"></span> Accept</a>            
                    || 
-                  <a href="requests.php?edited=1&idx=<?php echo $row['id']; ?>" data-toggle="modal" class="btn btn-danger"><span class="fa fa-times"></span> Reject</a>
+                  <a href="function/reject.php?id=<?php echo $row['id']; ?>" data-toggle="modal" class="btn btn-danger"><span class="fa fa-times"></span> Reject</a>
                    || 
                   <a href="view_request_details.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-warning"><span class="fa fa-pencil"></span> View</a> 
                               </td>
@@ -209,39 +209,7 @@
                           $a++;
                       }
                        
-
-          
-                      if (isset($_GET['idx']) && is_numeric($_GET['idx']))
-                      {
-                          $id = $_GET['idx'];
-                          if ($stmt = $mysqli->prepare("DELETE FROM requests WHERE id = ? LIMIT 1"))
-                          {
-                              $stmt->bind_param("i",$id);
-                              $stmt->execute();
-                              $stmt->close();
-                               ?>
-                    <div class="alert alert-success strover" id="sams1">
-                    <a href="#" class="close" data-dismiss="alert">&times;</a>
-                    <strong> Successfully! </strong><?php echo'Record Successfully deleted please refresh this page';?></div>
-               
-                    <?php
-                          }
-                          else
-                          {
-                    ?>
-                    <div class="alert alert-danger samuel" id="sams1">
-                    <a href="#" class="close" data-dismiss="alert">&times;</a>
-                    <strong> Danger! </strong><?php echo'OOPS please try again something went wrong';?></div>
-                    <?php
-                          }
-                          $mysqli->close();
-
-                      }
-                else
-
-                {
-
-                }
+                    
                       ?>
               
                
