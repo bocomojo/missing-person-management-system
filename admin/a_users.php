@@ -191,9 +191,12 @@
                             $res_n = mysqli_query($mysqli, $sql_n);    
                             $sql_e = "SELECT * FROM users WHERE email ='$email'";
                             $res_e = mysqli_query($mysqli, $sql_e);
-                            if(mysqli_num_rows($res_e) > 0){
-                            ?>
-                             <div class="alert alert-danger samuel animated shake" id="sams1">
+                            $sql_l = "SELECT * FROM users WHERE email ='$email'";
+                            $res_l = mysqli_query($mysqli, $sql_l);
+                        
+                        if(mysqli_num_rows($res_e) > 0){
+                        ?>
+                        <div class="alert alert-danger samuel animated shake" id="sams1">
                         <a href="#" class="close" data-dismiss="alert">&times;</a>
                         <strong> Danger! </strong><?php echo'sorry the email is already allocated to someone';?></div>
                         <?php    

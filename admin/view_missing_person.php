@@ -249,6 +249,12 @@ $(function () {
                     </li>
                     <?php } ?>
                     <li>
+                        <a href="notification.php">
+                            <i class="fa fa-cog"></i>
+                            Notifications
+                        </a>
+                    </li>
+                    <li>
                         <a href="account_settings.php">
                             <i class="fa fa-cog"></i>
                             Update Account

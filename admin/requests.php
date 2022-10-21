@@ -182,7 +182,7 @@
                 </thead>
                     <?php
                                    $a=1;
-                    $query=mysqli_query($mysqli,"select * from `requests` ");
+                    $query=mysqli_query($mysqli,"select * from `reports` ");
                      while($row=mysqli_fetch_array($query))
                       
                         {

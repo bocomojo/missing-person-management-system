@@ -42,7 +42,7 @@
                             <i class="fa fa-table"></i>
                             View Missing Persons
                         </a>
-                    </li>   
+                    </li>       
                    
                     <li>
                         <a href="invest.php">
@@ -125,6 +125,12 @@
                     </li>
                     <?php } ?>
                     <li>
+                        <a href="notification.php">
+                            <i class="fa fa-bell"></i>
+                            Notifications
+                        </a>
+                    </li>
+                    <li>
                         <a href="account_settings.php">
                             <i class="fa fa-cog"></i>
                             Update Account
@@ -169,35 +175,31 @@
                         <table class="table table-striped thead-dark table-bordered table-hover" id="myTable">
                 <thead>
                 <tr>
-                    <th>No</th>
-                    <th>Case Number</th>
-                    <th>Subject Name</th>
-                    <th>Gender</th>
-                    <th>Address</th>
-                    <th>Action</th> 
+                    <th>NO</th>
+                    <th>Request ID</th>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>Action</th>
 
-                    
-                    
-                    </tr>
+                </tr>
                 </thead>
                     <?php
-                                   $a=1;
-                    $query=mysqli_query($mysqli,"select *from `reports` ");
+                        $a=1;
+                        $username = $_SESSION['username'];
+                    $query=mysqli_query($mysqli,"select * from `notification` where username='$username'");
                      while($row=mysqli_fetch_array($query))
                         {
-                          $id = $row['id'];
+                          
                           ?>
                           <tr>
-                              <td><?php echo $a;?></td> 
-                            <td><?php echo $row['case_num'];?></td>
-                            <td><?php echo $row['fullname'];?></td>
-                            <td><?php echo $row['gender'];?></td>  
-                            <td><?php echo $row['address'];?></td>
-
-                            <td>
-                  <a href="function/archive.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-danger"><span class="fa fa-times"></span> Remove</a>
+                            <td><?php echo $a;?></td>
+                            <td><?php echo $row['request_id'];?></td>
+                            <td><?php echo $row['name'];?></td> 
+                            <td><?php echo $row['status'];?></td>
+                          <td>
+                  <a href="function/archive.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-danger"><span class="fa fa-times"></span> Status</a>
                    || 
-                  <a href="view_report_details.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-warning"><span class="fa fa-pencil"></span> View</a> 
+                  <a href="view_report_details.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-warning"><span class="fa fa-pencil"></span> Viewed</a> 
                               </td>
                           </tr>
                           <?php

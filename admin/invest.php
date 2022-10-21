@@ -124,6 +124,12 @@
                     </li>
                     <?php } ?>
                     <li>
+                        <a href="notification.php">
+                            <i class="fa fa-cog"></i>
+                            Notifications
+                        </a>
+                    </li>
+                    <li>
                         <a href="account_settings.php">
                             <i class="fa fa-cog"></i>
                             Update Account
@@ -350,7 +356,10 @@
           <div class="col-lg-6">
             <label>HAVE YOU REPORTED TO OTHER AGENCY? IF YES, STATE THE AGENCY</label>
               <input type="text" class="form-control" name="agency" placeholder="">
-          </div>  
+          </div>
+          <div class="col-lg-6">
+              <input type="hidden" name="username" value="<?php echo $_SESSION['username'];?>">
+          </div>   
         </div>
                 
                 <div class="row">

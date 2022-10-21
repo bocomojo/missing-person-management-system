@@ -126,6 +126,12 @@ $eprow=mysqli_fetch_array($sqlE);
                         </a>
                     </li>
                     <?php } ?>
+                    <li>
+                        <a href="notification.php">
+                            <i class="fa fa-cog"></i>
+                            Notifications
+                        </a>
+                    </li>
                     <li class="active">
                         <a href="account_settings.php">
                             <i class="fa fa-cog"></i>
