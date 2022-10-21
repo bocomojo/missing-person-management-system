@@ -174,6 +174,7 @@
                     <th>Subject Name</th>
                     <th>Gender</th>
                     <th>Address</th>
+                    <th>Status</th>
                     <th>Action</th> 
 
                     
@@ -194,6 +195,7 @@
                             <td><?php echo $row['fullname'];?></td>
                             <td><?php echo $row['gender'];?></td>  
                             <td><?php echo $row['address'];?></td>
+                            <td><?php echo $row['status'];?></td>
 
                             <td>
                   <a href="function/accept.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-warning"><span class="fa fa-check"></span> Accept</a>            
