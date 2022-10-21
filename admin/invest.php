@@ -358,7 +358,7 @@
               <input type="text" class="form-control" name="agency" placeholder="">
           </div>
           <div class="col-lg-6">
-              <input type="hidden" name="username" value="<?php echo $_SESSION['username'];?>">
+              <input type="hidden" name="username" value="<?php echo $_SESSION['name'] . " ". $_SESSION['surname'];?>">
           </div>   
         </div>
                 

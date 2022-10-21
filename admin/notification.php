@@ -194,7 +194,7 @@
                           ?>
                           <tr>
                             <td><?php echo $a;?></td>
-                            <td><?php echo $row['id'];?></td>
+                            <td><?php echo $row['case_num'];?></td>
                             <td><?php echo $row['fullname'];?></td> 
                             <td><?php if ($row['status']==0) {
                                 echo 'pending';

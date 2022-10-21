@@ -175,6 +175,10 @@
                     <th>Gender</th>
                     <th>Address</th>
                     <th>Status</th>
+                    <th>Reported by</th>
+                    <th>Accepted by</th>
+                    <th>Position</th>
+                    <th>Accepted date</th>
                     <th>Action</th> 
 
                     
@@ -205,6 +209,10 @@
                             } else if ($row['status']==4) {
                                 echo 'found';
                             }?></td>
+                            <td><?php echo $row['username'];?></td>
+                            <td><?php echo $row['accepted_by'];?></td>
+                            <td><?php echo $row['position'];?></td>
+                            <td><?php echo $row['accepted_date'];?></td>
 
                             <td>
                   <a href="function/archive.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-danger"><span class="fa fa-times"></span> Remove</a>
