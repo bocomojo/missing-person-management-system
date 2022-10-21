@@ -186,7 +186,7 @@
                     <?php
                         $a=1;
                         $username = $_SESSION['username'];
-                    $query=mysqli_query($mysqli,"select * from `notification` where username='$username'");
+                    $query=mysqli_query($mysqli,"select * from `reports` where username='$username'");
                      while($row=mysqli_fetch_array($query))
                         {
                         
@@ -194,9 +194,20 @@
                           ?>
                           <tr>
                             <td><?php echo $a;?></td>
-                            <td><?php echo $row['request_id'];?></td>
-                            <td><?php echo $row['name'];?></td> 
-                            <td><?php echo $row['status'];?></td>
+                            <td><?php echo $row['id'];?></td>
+                            <td><?php echo $row['fullname'];?></td> 
+                            <td><?php if ($row['status']==0) {
+                                echo 'pending';
+                            } else if ($row['status']==1) {
+                                echo 'accepted';
+                            } else if ($row['status']==2) {
+                                echo 'rejected';
+                            } else if ($row['status']==3) {
+                                echo 'cold case';
+                            } else if ($row['status']==4) {
+                                echo 'found';
+                            }
+                            ;?></td>
                           <td>
                   <a href="function/archive.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-danger"><span class="fa fa-times"></span> Status</a>
                    || 

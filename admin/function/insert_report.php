@@ -35,29 +35,28 @@ $comp_address = $_POST['comp_address'];
 $phone = $_POST['phone'];
 $relation = $_POST['relation'];
 $agency = $_POST['agency'];
+$username = $_POST['username'];
 //variables for notifcications
 // session_start();
-$username = $_POST['username'];
-$status = 0;
-$viewed = 0;
-$name = $fullname;
+// $username = $_POST['username'];
+// $status = 0;
+// $viewed = 0;
+// $name = $fullname;
 
-$sql = "INSERT INTO reports (fullname,alias,address,bday,smt,gender,race,recentphoto,height,weight,haircolor,hairstate,eyecolor,eyestate,prostet,blood,cloth,accessory,defect,lastloc,others,filed_date,case_num,comp_name,comp_address,phone,relation,agency,last_seen_date)
-VALUES('$fullname','$alias','$address','$bday','$smt','$gender','$race','$location','$height','$weight','$haircolor','$hairstate','$eyecolor','$eyestate','$prostet','$blood','$cloth','$accessory','$defect','$lastloc','$others',NOW(),'$case_num','$comp_name','$comp_address','$phone','$relation','$agency','$last_seen_date')";
+$sql = "INSERT INTO reports (fullname,alias,address,bday,smt,gender,race,recentphoto,height,weight,haircolor,hairstate,eyecolor,eyestate,prostet,blood,cloth,accessory,defect,lastloc,others,filed_date,case_num,comp_name,comp_address,phone,relation,agency,last_seen_date, username)
+VALUES('$fullname','$alias','$address','$bday','$smt','$gender','$race','$location','$height','$weight','$haircolor','$hairstate','$eyecolor','$eyestate','$prostet','$blood','$cloth','$accessory','$defect','$lastloc','$others',NOW(),'$case_num','$comp_name','$comp_address','$phone','$relation','$agency','$last_seen_date', '$username')";
+
+
+// $sqli = "INSERT INTO notification (request_id,username,status,viewed,name) VALUES ('$last_id','$username','$status','$viewed','$name')";
+
 if($mysqli->query($sql) === TRUE){
-	$last_id = $mysqli->insert_id;
-
-$sqli = "INSERT INTO notification (request_id,username,status,viewed,name) VALUES ('$last_id','$username','$status','$viewed','$name')";
-
-if($mysqli->query($sql) === TRUE && $mysqli->query($sqli) === TRUE){
 
 
-echo "<script>alert('Successfully Added!!!'); window.location='../invest.php'</script>";
+	echo "<script>alert('Successfully Added!!!'); window.location='../invest.php'</script>";
+} else {
+	echo "<script>alert('Error!!!');";
 }
 
-else
-	echo "<script>alert('Error Occured!!!'); window.location='../invest.php'</script>";
-}
 
 }
 

@@ -194,7 +194,17 @@
                             <td><?php echo $row['fullname'];?></td>
                             <td><?php echo $row['gender'];?></td>  
                             <td><?php echo $row['address'];?></td>
-                            <td><?php echo $row['status'];?></td>
+                            <td><?php if ($row['status']==0) {
+                                echo 'pending';
+                            } else if ($row['status']==1) {
+                                echo 'accepted';
+                            } else if ($row['status']==2) {
+                                echo 'rejected';
+                            } else if ($row['status']==3) {
+                                echo 'cold case';
+                            } else if ($row['status']==4) {
+                                echo 'found';
+                            }?></td>
 
                             <td>
                   <a href="function/archive.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-danger"><span class="fa fa-times"></span> Remove</a>

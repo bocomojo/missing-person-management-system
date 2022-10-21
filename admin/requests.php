@@ -195,7 +195,17 @@
                             <td><?php echo $row['fullname'];?></td>
                             <td><?php echo $row['gender'];?></td>  
                             <td><?php echo $row['address'];?></td>
-                            <td><?php echo $row['status'];?></td>
+                            <td><?php if ($row['status']==0) {
+                                echo 'pending';
+                            } else if ($row['status']==1) {
+                                echo 'accepted';
+                            } else if ($row['status']==2) {
+                                echo 'rejected';
+                            } else if ($row['status']==3) {
+                                echo 'cold case';
+                            } else if ($row['status']==4) {
+                                echo 'found';
+                            }?></td>
 
                             <td>
                   <a href="function/accept.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-warning"><span class="fa fa-check"></span> Accept</a>            
