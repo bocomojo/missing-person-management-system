@@ -60,7 +60,7 @@ if(isset($mysqli,$_POST['submit'])){
     <link rel="stylesheet" href="css/bootstrap.min.css">
     
     <!-- Style -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css1/styles.css">
 
     <title>Login</title>
   </head>
@@ -68,25 +68,26 @@ if(isset($mysqli,$_POST['submit'])){
   
 
   <div class="half">
-    <div class="bg order-1 order-md-2" style="background-image: url('images/bg_1.jpg');"></div>
+    <!-- <div class="bg order-1 order-md-2" style="background-color:#262626;"></div> -->
     <div class="contents order-2 order-md-1">
 
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-6">
-            <div class="form-block">
+            <div class="form-block1" style= "border-radius: 20px;">
               <div class="text-center mb-5">
-              <h3>Login to <strong>CMPS Missing Person Bulletin</strong></h3>
+              <img src="images/PNP-Logo.png" height="70px"><br><br><h3>Login to <strong>CMPS Missing Person Page</strong></h3>
               <!-- <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p> -->
               </div>
+              <hr> 
               <form action="#" method="post">
                 <div class="form-group first">
                   <label for="username">Username</label>
-                  <input type="text" class="form-control" placeholder="Your Username" name="username">
+                  <input type="text" class="form-control" placeholder="Your Username" name="username" required>
                 </div>
                 <div class="form-group last mb-3">
                   <label for="password">Password</label>
-                  <input type="password" class="form-control" placeholder="Your Password" name="password">
+                  <input type="password" class="form-control" placeholder="Your Password" name="password" required>
                 </div>
                 
                 <div class="d-sm-flex mb-5 align-items-center">
@@ -95,7 +96,7 @@ if(isset($mysqli,$_POST['submit'])){
                   <span class="ml-auto"><a href="signup.php" class="forgot-pass">Don't have an account?</a></span> 
                 </div>
 
-                <input type="submit" value="Log In" name="submit" class="btn btn-block btn-primary">
+                <input type="submit" value="Log In" name="submit" class="btn btn-block btn-color">
 
               </form>
             </div>
