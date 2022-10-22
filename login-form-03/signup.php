@@ -34,7 +34,7 @@
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-10">
-            <div class="form-block2">
+            <div class="form-block2" style="border-radius: 20px;">
               <div class="text-center mb-6">
               <img src="images/PNP-Logo.png" height="70px"><br><br><h3>Register to <strong>CMPS Missing Person Page</strong></h3>
               <!-- <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p> -->
@@ -44,24 +44,20 @@
                           
           <form action="function/signup.php" method="post" enctype="multipart/form-data">
           <div class="row form-group">
-          <div class="col-lg-4">
+          <div class="col-lg-5">
             <label>Name</label>
               <input type="text" class="form-control" name="name" pattern="[A-Za-z]{3,}" required>
           </div>  
-          <div class="col-lg-4">
+          <div class="col-lg-5">
             <label>Surname</label>
               <input type="text" class="form-control" name="surname" pattern="[A-Za-z]{3,}" required>
           </div>
           <div class="col-lg-2">
-            <label>Gender</label>
+            <label>Sex</label>
              <select class="form-control" name="gender">
-              <option>F</option>
-              <option>M</option>      
+              <option>Male</option>  
+              <option>Female</option>
               </select>
-          </div>
-          <div class="col-lg-2">
-            <label>Photo</label>
-              <input type="file" class="form-control" name="image" required>
           </div>
         </div>
         <div class="row form-group">
@@ -79,6 +75,12 @@
             <label>Phone</label>
               <input type="text" class="form-control" name="phone" pattern="[0][0-9]{3}[0-9]{3}[0-9]{4}" placeholder="09XXXXXXXXX" required>
           </div>  
+        </div>
+        <div class="row form-group">
+        <div class="col-lg-6" >
+            <label>Photo</label>
+              <input type="file" class="form-control" name="image" required  style="width: 100%;">
+          </div>
         </div>
         <hr>
          <div class="row form-group">
