@@ -1,33 +1,33 @@
 <?php require_once('includes/session.php');
        require_once('includes/conn.php');
        require_once('check.php');
-       $year = date("Y", strtotime("+8 HOURS"));
-       $conn = new mysqli("localhost", "root", "", "caaz") or die(mysqli_error());
-       $qjan = $conn->query("SELECT COUNT(*) as total FROM `reports` WHERE 'Jan' && `filed_date`") or die(mysqli_error());
-       $fjan = $qjan->fetch_array();
-       $qfeb = $conn->query("SELECT COUNT(*) as total FROM `reports` WHERE 'Feb' && `filed_date`") or die(mysqli_error());
-       $ffeb = $qfeb->fetch_array();
-       $qmar = $conn->query("SELECT COUNT(*) as total FROM `reports` WHERE 'Mar' && `filed_date`") or die(mysqli_error());
-       $fmar = $qmar->fetch_array();
-       $qapr = $conn->query("SELECT COUNT(*) as total FROM `reports` WHERE 'apr' && `filed_date`") or die(mysqli_error());
-       $fapr = $qapr->fetch_array();
-       $qmay = $conn->query("SELECT COUNT(*) as total FROM `reports` WHERE 'may' && `filed_date`") or die(mysqli_error());
-       $fmay = $qmay->fetch_array();
-       $qjun = $conn->query("SELECT COUNT(*) as total FROM `reports` WHERE 'jun' && `filed_date`") or die(mysqli_error());
-       $fjun = $qjun->fetch_array();
-       $qjuly = $conn->query("SELECT COUNT(*) as total FROM `reports` WHERE 'july' && `filed_date`") or die(mysqli_error());
-       $fjuly = $qjuly->fetch_array();
-       $qaug = $conn->query("SELECT COUNT(*) as total FROM `reports` WHERE 'aug' && `filed_date`") or die(mysqli_error());
-       $faug = $qaug->fetch_array();
-       $qsep = $conn->query("SELECT COUNT(*) as total FROM `reports` WHERE 'sep' && `filed_date`") or die(mysqli_error());
-       $fsep = $qsep->fetch_array();
-       $qoct = $conn->query("SELECT COUNT(*) as total FROM `reports` WHERE 'oct' && `filed_date`") or die(mysqli_error());
-       $foct = $qoct->fetch_array();
-       $qnov = $conn->query("SELECT COUNT(*) as total FROM `reports` WHERE 'nov' && `filed_date`") or die(mysqli_error());
-       $fnov = $qnov->fetch_array();
-       $qdec = $conn->query("SELECT COUNT(*) as total FROM `reports` WHERE 'dec' && `filed_date`") or die(mysqli_error());
-       $fdec = $qdec->fetch_array();
-       $year = date("Y");
+    //    $year = date("Y", strtotime("+8 HOURS"));
+    //    $conn = new mysqli("localhost", "root", "", "caaz") or die(mysqli_error());
+    //    $qjan = $conn->query("SELECT COUNT(*) as total FROM `reports` WHERE 'Jan' && `filed_date`") or die(mysqli_error());
+    //    $fjan = $qjan->fetch_array();
+    //    $qfeb = $conn->query("SELECT COUNT(*) as total FROM `reports` WHERE 'Feb' && `filed_date`") or die(mysqli_error());
+    //    $ffeb = $qfeb->fetch_array();
+    //    $qmar = $conn->query("SELECT COUNT(*) as total FROM `reports` WHERE 'Mar' && `filed_date`") or die(mysqli_error());
+    //    $fmar = $qmar->fetch_array();
+    //    $qapr = $conn->query("SELECT COUNT(*) as total FROM `reports` WHERE 'apr' && `filed_date`") or die(mysqli_error());
+    //    $fapr = $qapr->fetch_array();
+    //    $qmay = $conn->query("SELECT COUNT(*) as total FROM `reports` WHERE 'may' && `filed_date`") or die(mysqli_error());
+    //    $fmay = $qmay->fetch_array();
+    //    $qjun = $conn->query("SELECT COUNT(*) as total FROM `reports` WHERE 'jun' && `filed_date`") or die(mysqli_error());
+    //    $fjun = $qjun->fetch_array();
+    //    $qjuly = $conn->query("SELECT COUNT(*) as total FROM `reports` WHERE 'july' && `filed_date`") or die(mysqli_error());
+    //    $fjuly = $qjuly->fetch_array();
+    //    $qaug = $conn->query("SELECT COUNT(*) as total FROM `reports` WHERE 'aug' && `filed_date`") or die(mysqli_error());
+    //    $faug = $qaug->fetch_array();
+    //    $qsep = $conn->query("SELECT COUNT(*) as total FROM `reports` WHERE 'sep' && `filed_date`") or die(mysqli_error());
+    //    $fsep = $qsep->fetch_array();
+    //    $qoct = $conn->query("SELECT COUNT(*) as total FROM `reports` WHERE 'oct' && `filed_date`") or die(mysqli_error());
+    //    $foct = $qoct->fetch_array();
+    //    $qnov = $conn->query("SELECT COUNT(*) as total FROM `reports` WHERE 'nov' && `filed_date`") or die(mysqli_error());
+    //    $fnov = $qnov->fetch_array();
+    //    $qdec = $conn->query("SELECT COUNT(*) as total FROM `reports` WHERE 'dec' && `filed_date`") or die(mysqli_error());
+    //    $fdec = $qdec->fetch_array();
+    //    $year = date("Y");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -282,9 +282,10 @@ $(function () {
 
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-right  makotasamuel">
-                                <li><a href="#"><?php require_once('includes/name.php');?></a></li>
-                                <li ><a href="logout.php"><i class="fa fa-power-off"> Logout</i></a></li>
-           
+                                
+                                <li><a style="color: white;" href="#"><?php require_once('includes/name.php');?></a></li>
+                                <li ><a style="color: white;" href="logout.php"><i class="fa fa-power-off"> Logout</i></a></li>
+                                
                             </ul>
                         </div>
                     </div>
