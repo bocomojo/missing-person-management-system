@@ -124,7 +124,7 @@
                         </a>
                     </li>
                     <?php } ?>
-                    <li>
+                    <li class="active">
                         <a href="notification.php">
                             <i class="fa fa-bell"></i>
                             Notifications
