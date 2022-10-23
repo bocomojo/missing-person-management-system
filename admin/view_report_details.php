@@ -172,7 +172,7 @@
                                            
     <div class="panel panel-default sammacmedia">
             <div class="panel-heading">All Issues</div>
-        <div class="panel-body">
+        <div class="panel-body" id="printArea">
 
 
                     <?php
@@ -341,7 +341,8 @@
         </tr>
     </tbody>
 </table>
-<a href="report_form_download.php?id=<?php echo $id; ?>" target="_blank"><button>Download this form</button></a>
+
+
 </center>
 
                     <?php
@@ -349,6 +350,10 @@
                           $mysqli->close();
                          ?>
             </div>
+            <center>
+            <button onclick="printDiv('printArea')">Download this form</button>
+            </center>
+            
                 </div>
                 
                 <div class="line"></div>
@@ -397,4 +402,17 @@
              } );
          </script>
     </body>
+
+    <script>
+        function printDiv(printArea) {
+            var printContents = document.getElementById(printArea).innerHTML;
+            var originalContents = document.body.innerHTML;
+
+            document.body.innerHTML = printContents;
+
+            window.print();
+
+            document.body.innerHTML = originalContents;
+        }
+    </script>
 </html>

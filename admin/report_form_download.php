@@ -1,15 +1,14 @@
 <?php require_once('includes/session.php');
       require_once('includes/conn.php');
+    //   header('Content-disposition: attachment; filename=registerationform.pdf');
+    //   header('Content-type: application/pdf');
+    //   readfile('registerationform.pdf');
       
 ?>
 <!DOCTYPE html>
 <html>
 <body>
 <?php
-header('Content-type: application/pdf');
-header('Content-Disposition: attachment; filename="' . basename($filename) . '"');
-header('Content-Transfer-Encoding: binary');
-readfile($filename);
                     $id = $_GET['id'];
                     $query=mysqli_query($mysqli,"select * from `reports` where id = $id");
                      while($row=mysqli_fetch_array($query))
@@ -196,10 +195,13 @@ readfile($filename);
 </p>
 <?php
                           }
+                          
                           $mysqli->close();
                          ?>
 
 <button onclick="window.print()">Print this page</button>
 
 </body>
+
+
 </html>
