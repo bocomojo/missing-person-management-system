@@ -1,0 +1,332 @@
+<?php require_once('includes/session.php');
+      require_once('includes/conn.php');
+?>
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>
+    <strong>Sample Format of Alarm Sheet (Missing Person)</strong>
+</p>
+<p>
+    Republic of the Philippines
+</p>
+<p>
+    Department of the Interior and Local Government
+</p>
+<p>
+    PHILIPPINE NATIONAL POLICE
+</p>
+<p>
+    ______________________________________
+</p>
+<p>
+    _______________________
+</p>
+<p>
+    <strong>MISSING/WANTED PERSON ALARM SHEET</strong>
+</p>
+<p>
+    <strong></strong>
+</p>
+<table border="1" cellspacing="0" cellpadding="0" width="783">
+    <tbody>
+        <tr>
+            <td width="264" valign="top">
+                <p>
+                    1. ALARM NO.
+                </p>
+            </td>
+            <td width="519" colspan="4" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="264" valign="top">
+                <p>
+                    2.NATURE OF ALARM
+                </p>
+                <p>
+                    [ ] MISSING [ ] WANTED
+                </p>
+            </td>
+            <td width="273" colspan="3" valign="top">
+                <p>
+                    3.. PLACE WHERE LAST SEEN
+                </p>
+            </td>
+            <td width="246" valign="top">
+                <p>
+                    4. DATE/TIME
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="264" valign="top">
+                <p>
+                    5 NAME OF SUBJECT
+                </p>
+            </td>
+            <td width="273" colspan="3" valign="top">
+                <p>
+                    6. ALIAS (ES)
+                </p>
+            </td>
+            <td width="246" valign="top">
+                <p>
+                    7. ADDRESS
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="537" colspan="4" valign="top">
+                <p>
+                    8. DESCRIPTION:
+                </p>
+                <p>
+                    SEX
+                </p>
+                <p>
+                    NATIONALITY
+                </p>
+                <p>
+                    AGE
+                </p>
+                <p>
+                    COMPLEXION
+                </p>
+                <p>
+                    HEIGHT
+                </p>
+                <p>
+                    WEIGHT
+                </p>
+                <p>
+                    BUILD
+                </p>
+                <p>
+                    HAIR
+                </p>
+                <p>
+                    PECULIARITIES
+                </p>
+                <p>
+                    OTHER IDENTIFICATION DATA
+                </p>
+            </td>
+            <td width="246" valign="top">
+                <p>
+                    9. PHOTO
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="783" colspan="5" valign="top">
+                <p>
+                    10 ADDITIONAL INFO ON SUBJECT
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="264" valign="top">
+                <p>
+                    11.COMPLAINANT/INFORMANT
+                </p>
+            </td>
+            <td width="273" colspan="3" valign="top">
+                <p>
+                    12. ADDRESS
+                </p>
+            </td>
+            <td width="246" valign="top">
+                <p>
+                    13. TEL NO.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="264" valign="top">
+                <p align="left">
+                    14. RELATIONSHIP OF COMPLAINANT/INFORMANT TO SUBJECT
+                </p>
+            </td>
+            <td width="273" colspan="3" valign="top">
+                <p align="left">
+                    15. REPORTED TO OTHER AGENCY
+                </p>
+                <p>
+                    [ ] YES [ ] NO
+                </p>
+                <p align="left">
+                    If yes, what agency________________
+                </p>
+            </td>
+            <td width="246" valign="top">
+                <p>
+                    16. DATE/TIME REPORTED
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="264" valign="top">
+                <p>
+                    17. REPORT RECEIVED BY
+                </p>
+            </td>
+            <td width="273" colspan="3" valign="top">
+                <p>
+                    18. DATE/TIME
+                </p>
+            </td>
+            <td width="246" valign="top">
+                <p>
+                    19. POSITION/DESIGNATION
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="354" colspan="3" valign="top">
+                <p align="left">
+                    20. THIS IS TO CERTIFY that the above report/data are true
+                    and correct to the best of my knowledge.
+                </p>
+            </td>
+            <td width="429" colspan="2" valign="top">
+                <p>
+                    21. SIGNATURE OF COMPLAINANT/INFORMER
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="354" colspan="3" valign="top">
+                <p>
+                    22. SUBSCRIBED AND SWORN TO before me this _____ day of
+                    ________________ 19 _______
+                </p>
+            </td>
+            <td width="429" colspan="2" valign="top">
+                <p>
+                    23. SIGNATURE OF ADMINISTERING OFFICER
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="294" colspan="2" valign="top">
+                <p align="left">
+                    24. ISSUANCE OF ALARM REQUESTED BY
+                </p>
+            </td>
+            <td width="243" colspan="2" valign="top">
+                <p>
+                    25. DATE/TIME
+                </p>
+            </td>
+            <td width="246" valign="top">
+                <p>
+                    26. POSITION/DESIGNATION
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="294" colspan="2" valign="top">
+                <p>
+                    27. ALARM ISSUED BY
+                </p>
+            </td>
+            <td width="243" colspan="2" valign="top">
+                <p>
+                    28. DATE/TIME
+                </p>
+            </td>
+            <td width="246" valign="top">
+                <p>
+                    29. POSITION/DESIGNATION
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="294" colspan="2" valign="top">
+                <p align="left">
+                    30. LIFTING OF ALARM REQUESTED BY
+                </p>
+            </td>
+            <td width="243" colspan="2" valign="top">
+                <p>
+                    31. DATE/TIME
+                </p>
+            </td>
+            <td width="246" valign="top">
+                <p>
+                    32. POSITION/DESIGNATION
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="294" colspan="2" valign="top">
+                <p>
+                    33. ALARM LIFTED BY
+                </p>
+            </td>
+            <td width="243" colspan="2" valign="top">
+                <p>
+                    34. DATE/TIME
+                </p>
+            </td>
+            <td width="246" valign="top">
+                <p>
+                    35.POSITION/DESIGNATION
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="783" colspan="5" valign="top">
+                <p>
+                    36. REASON FOR LIFTING ALARM
+                </p>
+                <p>
+                    [ ] PERSON RECOVERED [ ] PERSON RETURNED [ ] OTHER
+                </p>
+                <p>
+                    [ ] FALSE ALARM [ ] PERSON ARRESTED
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="294" colspan="2" valign="top">
+                <p>
+                    37.SIGNATURE OF SUPERVISOR
+                </p>
+            </td>
+            <td width="243" colspan="2" valign="top">
+                <p>
+                    38. DATE/TIME
+                </p>
+            </td>
+            <td width="246" valign="top">
+                <p>
+                    39.POSITION/DESIGNATION
+                </p>
+            </td>
+        </tr>
+        <tr height="0">
+            <td width="267">
+            </td>
+            <td width="30">
+            </td>
+            <td width="60">
+            </td>
+            <td width="180">
+            </td>
+            <td width="246">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <strong></strong>
+</p>
+
+
+<button onclick="window.print()">Print this page</button>
+
+</body>
+</html>

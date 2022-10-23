@@ -160,8 +160,8 @@
 
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-right  makotasamuel">
-                                <li><a href="#"><?php require_once('includes/name.php');?></a></li>
-                                <li ><a href="logout.php"><i class="fa fa-power-off"> Logout</i></a></li>
+                                <li><a style="color: white;" href="#"><?php require_once('includes/name.php');?></a></li>
+                                <li ><a style="color: white;" href="logout.php"><i class="fa fa-power-off"> Logout</i></a></li>
            
                             </ul>
                         </div>
@@ -341,6 +341,7 @@
         </tr>
     </tbody>
 </table>
+<a href="report_form_download.php?id=<?php echo $id; ?>" target="_blank"><button>Download this form</button></a>
 </center>
 
                     <?php
@@ -349,6 +350,7 @@
                          ?>
             </div>
                 </div>
+                
                 <div class="line"></div>
                 <footer>
             <p class="text-center">
