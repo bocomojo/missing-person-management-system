@@ -10,6 +10,7 @@ $fullname = $_POST['fullname'];
 $alias = $_POST['alias'];
 $address = $_POST['address'];
 $bday = $_POST['bday'];
+$age = $_POST['age'];
 $last_seen_date = $_POST['last_seen_date'];
 $smt = $_POST['smt'];
 $gender = $_POST['gender'];
@@ -27,7 +28,7 @@ $accessory = $_POST['accessory'];
 $defect = $_POST['defect'];
 $lastloc = $_POST['lastloc'];
 $others = $_POST['others'];
-$filed_date = date(" M d Y hh:i:s ");
+$filed_date =  date("m-d-Y h:i:sa");
 $as = rand(1000,9999);     
 $case_num = date("YmdHis").'.'.$as;
 $comp_name = $_POST['comp_name'];
@@ -43,8 +44,8 @@ $username = $_POST['username'];
 // $viewed = 0;
 // $name = $fullname;
 
-$sql = "INSERT INTO reports (fullname,alias,address,bday,smt,gender,race,recentphoto,height,weight,haircolor,hairstate,eyecolor,eyestate,prostet,blood,cloth,accessory,defect,lastloc,others,filed_date,case_num,comp_name,comp_address,phone,relation,agency,last_seen_date, username)
-VALUES('$fullname','$alias','$address','$bday','$smt','$gender','$race','$location','$height','$weight','$haircolor','$hairstate','$eyecolor','$eyestate','$prostet','$blood','$cloth','$accessory','$defect','$lastloc','$others',NOW(),'$case_num','$comp_name','$comp_address','$phone','$relation','$agency','$last_seen_date', '$username')";
+$sql = "INSERT INTO reports (fullname,alias,address,bday,smt,gender,race,recentphoto,height,weight,haircolor,hairstate,eyecolor,eyestate,prostet,blood,cloth,accessory,defect,lastloc,others,filed_date,case_num,comp_name,comp_address,phone,relation,agency,last_seen_date, username,age)
+VALUES('$fullname','$alias','$address','$bday','$smt','$gender','$race','$location','$height','$weight','$haircolor','$hairstate','$eyecolor','$eyestate','$prostet','$blood','$cloth','$accessory','$defect','$lastloc','$others',NOW(),'$case_num','$comp_name','$comp_address','$phone','$relation','$agency','$last_seen_date', '$username','$age')";
 
 
 // $sqli = "INSERT INTO notification (request_id,username,status,viewed,name) VALUES ('$last_id','$username','$status','$viewed','$name')";

@@ -248,12 +248,16 @@ $(function () {
                         </a>
                     </li>
                     <?php } ?>
+                    <?php
+                    if($_SESSION['permission']==3){
+                    ?>
                     <li>
                         <a href="notification.php">
                             <i class="fa fa-cog"></i>
                             Notifications
                         </a>
                     </li>
+                    <?php } ?>
                     <li>
                         <a href="account_settings.php">
                             <i class="fa fa-cog"></i>
@@ -295,7 +299,7 @@ $(function () {
                  
     <div class="cards">
       <?php
-    $sql= mysqli_query($mysqli,"SELECT * FROM reports ORDER BY id ASC");
+    $sql= mysqli_query($mysqli,"SELECT * FROM reports WHERE status=1 ORDER BY id ASC");
     if (!empty($sql)) { 
         while ($row=mysqli_fetch_array($sql)) {
         $id = $row['id'];
@@ -315,7 +319,9 @@ $(function () {
     <?php } ?>
   <div class="containers">
     <h4><b><?php echo $row["fullname"]; ?></b></h4> 
-    <p>Age: <?php echo $row["age"]; ?></p> 
+    <p>Age: <?php echo $row["age"]; ?></p>
+    <p>Sex: <?php echo $row["gender"]; ?></p> 
+    <p>Last seen date: <?php $date = date_create($row["last_seen_date"]); echo date_format($date, "F d, Y h:i:sa"); ?></p>  
   </div>
 </div> 
 

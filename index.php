@@ -39,6 +39,9 @@ body {font-size:16px;}
     <a href="#system-manual" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">System Manual</a> 
     <a href="#missing-person-bulletin" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Missing Person Bulletin</a> 
     <!-- <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a> -->
+    <br>
+    <br>
+    <a href="login-form-03/login.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Log in to Submit Report</a> 
   </div>
 </nav>
 
@@ -187,7 +190,7 @@ body {font-size:16px;}
     <p><b>Our system-manual are thoughtfully chosen</b>:</p>
   </div>
 
-  <!-- The Team -->
+  <!-- The Team
   <div class="w3-row-padding w3-grayscale">
     <div class="w3-col m4 w3-margin-bottom">
       <div class="w3-light-grey">
@@ -219,7 +222,7 @@ body {font-size:16px;}
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- Missing-Person-Bulletin -->
   <div class="w3-container" id="missing-person-bulletin" style="margin-top:75px">
@@ -228,7 +231,7 @@ body {font-size:16px;}
     <p>Some text our prices. Lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure</p>
   </div>
 
-  <div class="w3-row-padding">
+  <!-- <div class="w3-row-padding">
     <div class="w3-half w3-margin-bottom">
       <ul class="w3-ul w3-light-grey w3-center">
         <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
@@ -264,7 +267,7 @@ body {font-size:16px;}
         </li>
       </ul>
     </div>
-  </div>
+  </div> -->
   
   <!-- Contact
   <div class="w3-container" id="contact" style="margin-top:75px">

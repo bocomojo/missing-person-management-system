@@ -125,12 +125,16 @@
                         </a>
                     </li>
                     <?php } ?>
+                    <?php
+                    if($_SESSION['permission']==3){
+                    ?>
                     <li>
                         <a href="notification.php">
                             <i class="fa fa-cog"></i>
                             Notifications
                         </a>
                     </li>
+                    <?php } ?>
                     <li>
                         <a href="account_settings.php">
                             <i class="fa fa-cog"></i>
@@ -256,10 +260,10 @@
                     <div class="fhead">&nbsp;NATIONALITY:&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['race'];?></div>
                 </p>
                 <p>
-                    <div class="fhead">&nbsp;AGE:&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                    <div class="fhead">&nbsp;AGE:&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['age'];?></div></div>
                 </p>
                 <p>
-                    <div class="fhead">&nbsp;COMPLEXION:&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                    <div class="fhead">&nbsp;COMPLEXION:&nbsp;&nbsp;&nbsp;&nbsp;</div></div>
                 </p>
                 <p>
                     <div class="fhead">&nbsp;HEIGHT:&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['height'];?></div>
@@ -268,7 +272,7 @@
                     <div class="fhead">&nbsp;WEIGHT:&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['weight'];?></div>
                 </p>
                 <p>
-                    <div class="fhead">&nbsp;BUILD:&nbsp;&nbsp;&nbsp;&nbsp;
+                    <div class="fhead">&nbsp;BUILD:&nbsp;&nbsp;&nbsp;&nbsp;</div>
                 </p></div>
                 <p>
                     <div class="fhead">&nbsp;HAIR:&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['hairstate'];?>&nbsp;<?php echo $row['haircolor'];?></div>
@@ -323,10 +327,7 @@
             </td>
             <td width="273" colspan="3" valign="top">
                 <p align="left">
-                    <div class="fhead">&nbsp;15. REPORTED TO OTHER AGENCY</div>
-                </p>
-                <p>
-                    <div class="fhead">&nbsp;[ ] YES [ ] NO</div>
+                    <div class="fhead">&nbsp;15. HAVE YOU REPORTED TO OTHER AGENCY?</div>
                 </p>
                 <p align="left">
                     <div class="fhead">&nbsp;If yes, what &nbsp;agency&nbsp;<?php echo $row['agency'];?></div>
