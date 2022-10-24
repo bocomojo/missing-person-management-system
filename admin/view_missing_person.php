@@ -293,7 +293,7 @@ $(function () {
 
             <div class="line"></div>
                  
-      <div class="cards">
+    <div class="cards">
       <?php
     $sql= mysqli_query($mysqli,"SELECT * FROM reports ORDER BY id ASC");
     if (!empty($sql)) { 
@@ -323,7 +323,7 @@ $(function () {
         }
     }  else {
 
-    echo "No Records.";
+     echo "No Records."; 
 
     }
     ?>
