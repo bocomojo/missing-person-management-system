@@ -5,7 +5,7 @@ session_start();
 $username = $_SESSION['name'] . " ". $_SESSION['surname'];
 
 date_default_timezone_set('Asia/Manila');
-$dateToday = date("m-d-Y h:i:sa");
+$dateToday = date("F d, Y h:i:sa");
 $positionArray = ['','Admin', 'Desk officer', 'User'];
 $position = $positionArray[$_SESSION['permission']];
 

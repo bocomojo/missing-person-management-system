@@ -340,6 +340,26 @@
                 </p>
             </td>
         </tr>
+        <tr>
+            <td width="264" valign="top">
+                <p>
+                <div class="fhead">&nbsp;17. REPORT RECEIVED BY</div><br>
+                &nbsp;&nbsp;<?php echo $row['accepted_by'];?>
+                </p>
+            </td>
+            <td width="273" colspan="3" valign="top">
+                <p>
+                <div class="fhead">&nbsp;18. DATE/TIME</div><br>
+                &nbsp;&nbsp;<?php echo $row['accepted_date'];?>
+                </p>
+            </td>
+            <td width="246" valign="top">
+                <p>
+                <div class="fhead">&nbsp;19. POSITION/DESIGNATION</div><br>
+                &nbsp;&nbsp;<?php echo $row['position'];?>
+                </p>
+            </td>
+        </tr>
     </tbody>
 </table>
 
