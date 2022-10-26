@@ -193,7 +193,7 @@
                 </thead>
                     <?php
                                    $a=1;
-                    $query=mysqli_query($mysqli,"select *from `reports` where status=1");
+                    $query=mysqli_query($mysqli,"select *from `reports` where status=3");
                      while($row=mysqli_fetch_array($query))
                         {
                           $id = $row['id'];
@@ -207,13 +207,19 @@
                             <td><?php if ($row['status']==0) {
                                 echo 'Pending';
                             } else if ($row['status']==1) {
-                                echo 'Ongoing Case';
+                                echo 'Accepted';
                             } else if ($row['status']==2) {
-                                echo 'Rejected';
+                                echo 'Requesting issuance of alarm';
                             } else if ($row['status']==3) {
-                                echo 'Cold Case';
+                                echo 'Alarm has been issued';
                             } else if ($row['status']==4) {
+                                echo 'Requesting lift of alarm';
+                            } else if ($row['status']==5) {
+                                echo 'Alarm has been lifted';
+                            } else if ($row['status']==6) {
                                 echo 'Found';
+                            } else if ($row['status']==7) {
+                                echo 'Rejected';
                             }?></td>
                             <td><?php echo $row['username'];?></td>
                             <td><?php echo $row['accepted_by'];?></td>

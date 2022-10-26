@@ -188,7 +188,7 @@
                 </thead>
                     <?php
                                    $a=1;
-                    $query=mysqli_query($mysqli,"select *from `archives` ");
+                    $query=mysqli_query($mysqli,"select *from `reports` where status=5 or status=6  ");
                      while($row=mysqli_fetch_array($query))
                         {
                           $id = $row['id'];

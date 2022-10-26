@@ -188,7 +188,7 @@
                 </thead>
                     <?php
                                    $a=1;
-                    $query=mysqli_query($mysqli,"select *from `reports` where status=2");
+                    $query=mysqli_query($mysqli,"select *from `reports` where status=7");
                      while($row=mysqli_fetch_array($query))
                         {
                           

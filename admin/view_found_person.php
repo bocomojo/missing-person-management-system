@@ -190,7 +190,7 @@
                 </thead>
                     <?php
                                    $a=1;
-                    $query=mysqli_query($mysqli,"select *from `reports` where status=4");
+                    $query=mysqli_query($mysqli,"select *from `reports` where status=6");
                      while($row=mysqli_fetch_array($query))
                         {
                           $id = $row['id'];
