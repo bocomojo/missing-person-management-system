@@ -53,7 +53,7 @@ VALUES('$fullname','$alias','$address','$bday','$smt','$gender','$race','$locati
 if($mysqli->query($sql) === TRUE){
 
 
-	echo "<script>alert('Successfully Added!!!'); window.location='../invest.php'</script>";
+	echo "<script>alert('Successfully Reported!!!'); window.location='../invest.php'</script>";
 } else {
 	echo "<script>alert('Error!!!');";
 }

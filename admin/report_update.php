@@ -68,13 +68,13 @@
                            All Desk Officers
                         </a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="v_issue.php">
                             <i class="fa fa-table"></i>
                             View Active Cases
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="view_process.php">
                             <i class="fa fa-table"></i>
                             Reports in Process
@@ -189,9 +189,9 @@
                     $id = $_GET['id'];
                     $query=mysqli_query($mysqli,"select * from `reports` where id = $id");
                      while($row=mysqli_fetch_array($query))
-                      
+                     
                         {
-                          
+                            $id = $row['id'];
                           ?>
 
               <center>                       
@@ -201,6 +201,7 @@
 <p>
     <strong></strong>
 </p>
+<form action="function/update_report.php" method="POST">
 <table border="1" cellspacing="0" cellpadding="0" width="783">
     <tbody>
         <tr>
@@ -399,21 +400,21 @@
             <td width="294" colspan="2" valign="top">
                 <p align="left">
                 <div class="fhead">&nbsp;24. ISSUANCE OF ALARM REQUESTED BY</div><br>
-                &nbsp;&nbsp;<?php echo $row['issue_alarm_req_by'];?>
+                &nbsp;&nbsp;<input type="text" class="form-control" name="issue_alarm_req_by">
                 </p>
             </td>
             <td width="243" colspan="2" valign="top">
                 <p>
                 <div class="fhead">&nbsp;25. DATE/TIME</div>
                 <br>
-                &nbsp;&nbsp;<?php $date = date_create($row["issue_alarm_req_date"]); echo date_format($date, "F d, Y h:i:sa"); ?>
+                &nbsp;&nbsp;<input type="datetime-local" class="form-control" name="issue_alarm_req_date">
                 </p>
             </td>
             <td width="246" valign="top">
                 <p>
                 <div class="fhead">&nbsp;26. POSITION/DESIGNATION</div>
                 <br>
-                &nbsp;&nbsp;<?php echo $row['issue_alarm_req_position'];?>
+                &nbsp;&nbsp;<input type="text" class="form-control" name="issue_alarm_req_position">
                 </p>
             </td>
         </tr>
@@ -422,21 +423,21 @@
                 <p>
                 <div class="fhead">&nbsp;27. ALARM ISSUED BY</div>
                 <br>
-                &nbsp;&nbsp;<?php echo $row['alarm_issue_by'];?>
+                &nbsp;&nbsp;<input type="text" class="form-control" name="alarm_issue_by">
                 </p>
             </td>
             <td width="243" colspan="2" valign="top">
                 <p>
                 <div class="fhead">&nbsp;28. DATE/TIME</div>
                 <br>
-                &nbsp;&nbsp;<?php $date = date_create($row["alarm_issue_date"]); echo date_format($date, "F d, Y h:i:sa"); ?>
+                &nbsp;&nbsp;<input type="datetime-local" class="form-control" name="alarm_issue_date">
                 </p>
             </td>
             <td width="246" valign="top">
                 <p>
                 <div class="fhead">&nbsp;29. POSITION/DESIGNATION</div>
                 <br>
-                &nbsp;&nbsp;<?php echo $row['alarm_issue_position'];?>
+                &nbsp;&nbsp;<input type="text" class="form-control" name="alarm_issue_position">
                 </p>
             </td>
         </tr>
@@ -445,21 +446,21 @@
                 <p align="left">
                 <div class="fhead">&nbsp;30. LIFTING OF ALARM REQUESTED BY</div>
                 <br>
-                &nbsp;&nbsp;<?php echo $row['lift_alarm_req_by'];?>
+                &nbsp;&nbsp;<input type="text" class="form-control" name="lift_alarm_req_by">
                 </p>
             </td>
             <td width="243" colspan="2" valign="top">
                 <p>
                 <div class="fhead">&nbsp;31. DATE/TIME</div>
                 <br>
-                &nbsp;&nbsp;<?php $date = date_create($row["lift_alarm_req_date"]); echo date_format($date, "F d, Y h:i:sa"); ?>
+                &nbsp;&nbsp;<input type="datetime-local" class="form-control" name="lift_alarm_req_date">
                 </p>
             </td>
             <td width="246" valign="top">
                 <p>
                 <div class="fhead">&nbsp;32. POSITION/DESIGNATION</div>
                 <br>
-                &nbsp;&nbsp;<?php echo $row['lift_alarm_req_position'];?>
+                &nbsp;&nbsp;<input type="text" class="form-control" name="lift_alarm_req_position">
                 </p>
             </td>
         </tr>
@@ -468,20 +469,20 @@
                 <p>
                 <div class="fhead">&nbsp;33. ALARM LIFTED BY</div>
                 <br>
-                &nbsp;&nbsp;<?php echo $row['alarm_lifted_by'];?>
+                &nbsp;&nbsp;<input type="text" class="form-control" name="alarm_lifted_by">
                 </p>
             </td>
             <td width="243" colspan="2" valign="top">
                 <p>
                 <div class="fhead">&nbsp;34. DATE/TIME</div>
                 <br>
-                &nbsp;&nbsp;<?php $date = date_create($row["alarm_lifted_date"]); echo date_format($date, "F d, Y h:i:sa"); ?>
+                &nbsp;&nbsp;<input type="datetime-local" class="form-control" name="alarm_lifted_date">
                 </p>
             </td>
             <td width="246" valign="top">
                 <p>
                 <div class="fhead">&nbsp;35.POSITION/DESIGNATION</div><br>
-                &nbsp;&nbsp;<?php echo $row['alarm_lifted_position'];?>
+                &nbsp;&nbsp;<input type="text" class="form-control" name="alarm_lifted_position">
                 </p>
             </td>
         </tr>
@@ -489,7 +490,7 @@
             <td width="783" colspan="5" valign="top">
                 <p>
                 <div class="fhead">&nbsp;36. REASON FOR LIFTING ALARM</div><br>
-                &nbsp;&nbsp;<?php echo $row['reason_lift'];?>
+                &nbsp;&nbsp;<input type="text" class="form-control" name="reason_lift">
                 </p>
             </td>
         </tr>
@@ -525,10 +526,12 @@
             <td width="246">
             </td>
         </tr>
+        <input type="hidden" name="id" value="<?php echo $id; ?>">
     </tbody>
 </table>
-
-
+<br>
+<button type="submit" name="update_form" data-toggle="modal" class="btn btn-primary"><span class="fa fa-pencil"></span> Update</button><br>
+                        </form>
 </center>
 
                     <?php
@@ -537,7 +540,7 @@
                          ?>
             </div>
             <center>
-            <button class="btn btn-primary fa fa-download" onclick="printDiv('printArea')"> &nbsp;Download this form</button><br><br>
+            
             </center>
             
                 </div>

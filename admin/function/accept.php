@@ -19,11 +19,11 @@ $sql="UPDATE reports SET status = '1', accepted_by = '$username', accepted_date 
     if ($mysqli->query($sql) === true) 
 { 
 
-    echo "<script>alert('Successfully Accepted!!!'); window.location='../v_issue.php'</script>"; 
+    echo "<script>alert('Successfully Accepted!'); window.location='../v_issue.php'</script>"; 
 } 
 else
 { 
-    echo "<script>alert('Error Occured!!!');";
+    echo "<script>alert('Error Occured!');";
         $mysqli->error; 
 } 
   

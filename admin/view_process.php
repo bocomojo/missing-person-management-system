@@ -190,7 +190,7 @@
                 </thead>
                     <?php
                                    $a=1;
-                    $query=mysqli_query($mysqli,"select * from `reports` where status=0");
+                    $query=mysqli_query($mysqli,"select * from `reports` where status=1 or status=2 or status=3 or status=4 or status=5");
                      while($row=mysqli_fetch_array($query))
                       
                         {
@@ -203,24 +203,28 @@
                             <td><?php echo $row['gender'];?></td>  
                             <td><?php echo $row['address'];?></td>
                             <td><?php if ($row['status']==0) {
-                                echo 'pending';
+                                echo 'Pending';
                             } else if ($row['status']==1) {
-                                echo 'accepted';
+                                echo 'Accepted';
                             } else if ($row['status']==2) {
-                                echo 'rejected';
+                                echo 'Requesting issuance of alarm';
                             } else if ($row['status']==3) {
-                                echo 'cold case';
+                                echo 'Alarm has been issued';
                             } else if ($row['status']==4) {
-                                echo 'found';
+                                echo 'Requesting lift of alarm';
+                            } else if ($row['status']==5) {
+                                echo 'Alarm has been lifted';
+                            } else if ($row['status']==6) {
+                                echo 'Found';
+                            } else if ($row['status']==7) {
+                                echo 'Rejected';
                             }?></td>
                             <td><?php echo $row['username'];?></td>
 
                             <td>
-                  <a href="function/accept.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-warning"><span class="fa fa-check"></span> Accept</a>            
+                  <a href="report_update.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-primary"><span class="fa fa-pencil"></span> Update</a>    
                    || 
-                  <a href="function/reject.php?id=<?php echo $row['id']; ?>" data-toggle="modal" class="btn btn-danger"><span class="fa fa-times"></span> Reject</a>
-                   || 
-                  <a href="view_request_details.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-warning"><span class="fa fa-pencil"></span> View</a> 
+                  <a href="view_report_details.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-warning"><span class="fa fa-eye"></span> View</a> 
                               </td>
                           </tr>
                           <?php
