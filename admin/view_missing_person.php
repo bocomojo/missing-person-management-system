@@ -195,7 +195,7 @@
                             <td><?php echo $row['fullname'];?></td>
                             <td><?php echo $row['age'];?></td>  
                             <td><?php echo $row['gender'];?></td>
-                            <td><?php echo $row['last_seen_date'];?></td>
+                            <td><?php $date = date_create($row["last_seen_date"]); echo date_format($date, "F d, Y h:i:sa"); ?></td>
                             <td><?php echo $row['lastloc'];?></td>
                             <td>
                   <a href="function/archive.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-primary"><span class="fa fa-download"></span> Download  Poster</a>

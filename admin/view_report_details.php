@@ -37,7 +37,7 @@
                            Dashboard
                         </a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="view_missing_person.php">
                             <i class="fa fa-table"></i>
                             View Missing Persons
@@ -68,7 +68,7 @@
                            All Desk Officers
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="v_issue.php">
                             <i class="fa fa-table"></i>
                             View Missing Reports
@@ -224,7 +224,7 @@
             <td width="246" valign="top">
                 <p>
                     <div class="fhead">&nbsp;4. DATE/TIME</div><br>
-                    &nbsp;&nbsp;<?php echo $row['filed_date'];?>
+                    &nbsp;&nbsp;<?php $date = date_create($row["last_seen_date"]); echo date_format($date, "F d, Y h:i:sa"); ?>
                 </p>
             </td>
         </tr>
@@ -336,7 +336,7 @@
             <td width="246" valign="top">
                 <p>
                     <div class="fhead">&nbsp;16. DATE/TIME REPORTED</div><br>
-                    &nbsp;&nbsp;<?php echo $row['filed_date'];?>
+                    &nbsp;&nbsp;<?php $date = date_create($row["filed_date"]); echo date_format($date, "F d, Y h:i:sa"); ?>
                 </p>
             </td>
         </tr>
@@ -358,6 +358,139 @@
                 <div class="fhead">&nbsp;19. POSITION/DESIGNATION</div><br>
                 &nbsp;&nbsp;<?php echo $row['position'];?>
                 </p>
+            </td>
+        </tr>
+        <!-- <tr>
+            <td width="354" colspan="3" valign="top">
+                <p align="left">
+                <div class="fhead">&nbsp;20. THIS IS TO CERTIFY that the above report/data are true
+                    and correct to the best of my knowledge.</div>
+                </p>
+            </td>
+            <td width="429" colspan="2" valign="top">
+                <p>
+                <div class="fhead">&nbsp;21. SIGNATURE OF COMPLAINANT/INFORMER</div>
+                </p>
+            </td>
+        </tr> -->
+        <!-- <tr>
+            <td width="354" colspan="3" valign="top">
+                <p>
+                <div class="fhead">&nbsp;22. SUBSCRIBED AND SWORN TO before me this _____ day of
+                    ________________ 19 _______</div>
+                </p>
+            </td>
+            <td width="429" colspan="2" valign="top">
+                <p>
+                <div class="fhead">&nbsp;23. SIGNATURE OF ADMINISTERING OFFICER</div>
+                </p>
+            </td>
+        </tr>
+        <tr> -->
+            <td width="294" colspan="2" valign="top">
+                <p align="left">
+                <div class="fhead">&nbsp;24. ISSUANCE OF ALARM REQUESTED BY</div>
+                </p>
+            </td>
+            <td width="243" colspan="2" valign="top">
+                <p>
+                <div class="fhead">&nbsp;25. DATE/TIME</div>
+                </p>
+            </td>
+            <td width="246" valign="top">
+                <p>
+                <div class="fhead">&nbsp;26. POSITION/DESIGNATION</div>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="294" colspan="2" valign="top">
+                <p>
+                <div class="fhead">&nbsp;27. ALARM ISSUED BY</div>
+                </p>
+            </td>
+            <td width="243" colspan="2" valign="top">
+                <p>
+                <div class="fhead">&nbsp;28. DATE/TIME</div>
+                </p>
+            </td>
+            <td width="246" valign="top">
+                <p>
+                <div class="fhead">&nbsp;29. POSITION/DESIGNATION</div>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="294" colspan="2" valign="top">
+                <p align="left">
+                <div class="fhead">&nbsp;30. LIFTING OF ALARM REQUESTED BY</div>
+                </p>
+            </td>
+            <td width="243" colspan="2" valign="top">
+                <p>
+                <div class="fhead">&nbsp;31. DATE/TIME</div>
+                </p>
+            </td>
+            <td width="246" valign="top">
+                <p>
+                <div class="fhead">&nbsp;32. POSITION/DESIGNATION</div>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="294" colspan="2" valign="top">
+                <p>
+                <div class="fhead">&nbsp;33. ALARM LIFTED BY</div>
+                </p>
+            </td>
+            <td width="243" colspan="2" valign="top">
+                <p>
+                <div class="fhead">&nbsp;34. DATE/TIME</div>
+                </p>
+            </td>
+            <td width="246" valign="top">
+                <p>
+                <div class="fhead">&nbsp;35.POSITION/DESIGNATION</div>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="783" colspan="5" valign="top">
+                <p>
+                <div class="fhead">&nbsp;36. REASON FOR LIFTING ALARM</div>
+                </p>
+                <p>
+                <div class="fhead">&nbsp;[ ] PERSON RECOVERED [ ] PERSON RETURNED [ ] FALSE ALARM</div>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="294" colspan="2" valign="top">
+                <p>
+                <div class="fhead">&nbsp;37.SIGNATURE OF SUPERVISOR</div>
+                </p>
+            </td>
+            <td width="243" colspan="2" valign="top">
+                <p>
+                <div class="fhead">&nbsp;38. DATE/TIME</div>
+                </p>
+            </td>
+            <td width="246" valign="top">
+                <p>
+                <div class="fhead">&nbsp;39.POSITION/DESIGNATION</div>
+                </p>
+            </td>
+        </tr>
+        <tr height="0">
+            <td width="267">
+            </td>
+            <td width="30">
+            </td>
+            <td width="60">
+            </td>
+            <td width="180">
+            </td>
+            <td width="246">
             </td>
         </tr>
     </tbody>
