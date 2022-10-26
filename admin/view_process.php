@@ -37,7 +37,7 @@
                            Dashboard
                         </a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="view_missing_person.php">
                             <i class="fa fa-table"></i>
                             View Missing Persons
@@ -74,7 +74,7 @@
                             Active Cases
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="view_process.php">
                             <i class="fa fa-table"></i>
                             Reports in Process
@@ -172,16 +172,16 @@
     <div class="panel panel-default sammacmedia">
             <div class="panel-heading">All Issues</div>
         <div class="panel-body">
-                <table class="table table-striped thead-dark table-bordered table-hover" id="myTable" >    
+                        <table class="table table-striped thead-dark table-bordered table-hover" id="myTable">
                 <thead>
                 <tr>
                     <th>No</th>
-                    <th>Image</th>
+                    <th>Case Number</th>
                     <th>Subject Name</th>
-                    <th>Age</th>
-                    <th>Sex</th>
-                    <th>Last seen date</th>
-                    <th>Last seen place</th>
+                    <th>Gender</th>
+                    <th>Address</th>
+                    <th>Status</th>
+                    <th>Reported by</th>
                     <th>Action</th> 
 
                     
@@ -190,62 +190,44 @@
                 </thead>
                     <?php
                                    $a=1;
-                    $query=mysqli_query($mysqli,"select *from `reports` where status=1");
+                    $query=mysqli_query($mysqli,"select * from `reports` where status=0");
                      while($row=mysqli_fetch_array($query))
+                      
                         {
                           $id = $row['id'];
                           ?>
                           <tr>
-                            <td><?php echo $a;?></td> 
-                            <td><img src="assets/image/missing_person/<?php echo $row["recentphoto"]; ?>" alt="Avatar" style="width:390px"></td>
+                              <td><?php echo $a;?></td> 
+                            <td><?php echo $row['case_num'];?></td>
                             <td><?php echo $row['fullname'];?></td>
-                            <td><?php echo $row['age'];?></td>  
-                            <td><?php echo $row['gender'];?></td>
-                            <td><?php $date = date_create($row["last_seen_date"]); echo date_format($date, "F d, Y h:i:sa"); ?></td>
-                            <td><?php echo $row['lastloc'];?></td>
+                            <td><?php echo $row['gender'];?></td>  
+                            <td><?php echo $row['address'];?></td>
+                            <td><?php if ($row['status']==0) {
+                                echo 'pending';
+                            } else if ($row['status']==1) {
+                                echo 'accepted';
+                            } else if ($row['status']==2) {
+                                echo 'rejected';
+                            } else if ($row['status']==3) {
+                                echo 'cold case';
+                            } else if ($row['status']==4) {
+                                echo 'found';
+                            }?></td>
+                            <td><?php echo $row['username'];?></td>
+
                             <td>
-                  <a href="function/archive.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-primary"><span class="fa fa-download"></span> Download  Poster</a>
+                  <a href="function/accept.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-warning"><span class="fa fa-check"></span> Accept</a>            
                    || 
-                  <a href="view_report_details.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-warning"><span class="fa fa-pencil"></span> View</a> 
+                  <a href="function/reject.php?id=<?php echo $row['id']; ?>" data-toggle="modal" class="btn btn-danger"><span class="fa fa-times"></span> Reject</a>
+                   || 
+                  <a href="view_request_details.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-warning"><span class="fa fa-pencil"></span> View</a> 
                               </td>
                           </tr>
                           <?php
                           $a++;
                       }
                        
-
-          
-                      if (isset($_GET['idx']) && is_numeric($_GET['idx']))
-                      {
-                          $id = $_GET['idx'];
-                          if ($stmt = $mysqli->prepare("DELETE FROM reports WHERE id = ? LIMIT 1"))
-                          {
-                              $stmt->bind_param("i",$id);
-                              $stmt->execute();
-                              $stmt->close();
-                               ?>
-                    <div class="alert alert-success strover" id="sams1">
-                    <a href="#" class="close" data-dismiss="alert">&times;</a>
-                    <strong> Successfully! </strong><?php echo'Record Successfully deleted please refresh this page';?></div>
                     
-                    <?php
-                          }
-                          else
-                          {
-                    ?>
-                    <div class="alert alert-danger samuel" id="sams1">
-                    <a href="#" class="close" data-dismiss="alert">&times;</a>
-                    <strong> Danger! </strong><?php echo'OOPS please try again something went wrong';?></div>
-                    <?php
-                          }
-                          $mysqli->close();
-
-                      }
-                else
-
-                {
-
-                }
                       ?>
               
                

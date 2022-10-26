@@ -72,7 +72,7 @@ $eprow=mysqli_fetch_array($sqlE);
                     <li>
                         <a href="v_issue.php">
                             <i class="fa fa-table"></i>
-                            View Missing Reports
+                            Active Cases
                         </a>
                     </li>
                     <li>

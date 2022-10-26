@@ -70,13 +70,19 @@
                     <li>
                         <a href="v_issue.php">
                             <i class="fa fa-table"></i>
-                            View Missing Reports
+                            Active Cases
+                        </a>
+                    </li>
+                    <li>
+                        <a href="view_process.php">
+                            <i class="fa fa-table"></i>
+                            Reports in Process
                         </a>
                     </li>
                     <li>
                         <a href="requests.php">
                             <i class="fa fa-table"></i>
-                            View Pending Requests
+                            Pending Requests
                         </a>
                     </li>
 

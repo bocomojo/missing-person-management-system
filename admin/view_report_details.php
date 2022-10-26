@@ -40,7 +40,7 @@
                     <li>
                         <a href="view_missing_person.php">
                             <i class="fa fa-table"></i>
-                            View Missing Persons
+                            View Active Cases
                         </a>
                     </li>   
                    
@@ -71,13 +71,19 @@
                     <li class="active">
                         <a href="v_issue.php">
                             <i class="fa fa-table"></i>
-                            View Missing Reports
+                            View Active Cases
+                        </a>
+                    </li>
+                    <li>
+                        <a href="view_process.php">
+                            <i class="fa fa-table"></i>
+                            Reports in Process
                         </a>
                     </li>
                     <li>
                         <a href="requests.php">
                             <i class="fa fa-table"></i>
-                            View Pending Requests
+                            Pending Requests
                         </a>
                     </li>
 
@@ -260,10 +266,10 @@
                     <div class="fhead">&nbsp;NATIONALITY:&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['race'];?></div>
                 </p>
                 <p>
-                    <div class="fhead">&nbsp;AGE:&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['age'];?></div></div>
+                    <div class="fhead">&nbsp;AGE:&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['age'];?></div>
                 </p>
                 <p>
-                    <div class="fhead">&nbsp;COMPLEXION:&nbsp;&nbsp;&nbsp;&nbsp;</div></div>
+                    <div class="fhead">&nbsp;COMPLEXION:&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['complexion'];?></div>
                 </p>
                 <p>
                     <div class="fhead">&nbsp;HEIGHT:&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['height'];?></div>
@@ -272,16 +278,19 @@
                     <div class="fhead">&nbsp;WEIGHT:&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['weight'];?></div>
                 </p>
                 <p>
-                    <div class="fhead">&nbsp;BUILD:&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                    <div class="fhead">&nbsp;BUILD:&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['build'];?></div>
                 </p></div>
                 <p>
                     <div class="fhead">&nbsp;HAIR:&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['hairstate'];?>&nbsp;<?php echo $row['haircolor'];?></div>
                 </p>
                 <p>
-                    <div class="fhead">&nbsp;PECULIARITIES:&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['defect'];?></div>
+                    <div class="fhead">&nbsp;PECULIARITIES:&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['peculiarity'];?></div>
                 </p>
                 <p>
                     <div class="fhead">&nbsp;OTHER IDENTIFICATION DATA:&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                    &nbsp;&nbsp;&nbsp;<?php echo $row['smt'];?><br>
+                    &nbsp;&nbsp;&nbsp;<?php echo $row['cloth'];?><br>
+                    &nbsp;&nbsp;&nbsp;<?php echo $row['others'];?><br>
                 </p>
             </td>
             <td width="246" valign="top">
@@ -293,7 +302,7 @@
         <tr>
             <td width="783" colspan="5" valign="top">
                 <p>
-                    <div class="fhead">&nbsp;10 ADDITIONAL INFO ON SUBJECT<br>
+                    <div class="fhead">&nbsp;10 ADDITIONAL INFO ON SUBJECT</div><br>
                     &nbsp;&nbsp;<?php echo $row['others'];?></div>
                 </p>
             </td>
@@ -389,17 +398,22 @@
         <tr> -->
             <td width="294" colspan="2" valign="top">
                 <p align="left">
-                <div class="fhead">&nbsp;24. ISSUANCE OF ALARM REQUESTED BY</div>
+                <div class="fhead">&nbsp;24. ISSUANCE OF ALARM REQUESTED BY</div><br>
+                &nbsp;&nbsp;<?php echo $row['issue_alarm_req_by'];?>
                 </p>
             </td>
             <td width="243" colspan="2" valign="top">
                 <p>
                 <div class="fhead">&nbsp;25. DATE/TIME</div>
+                <br>
+                &nbsp;&nbsp;<?php echo $row['issue_alarm_req_date'];?>
                 </p>
             </td>
             <td width="246" valign="top">
                 <p>
                 <div class="fhead">&nbsp;26. POSITION/DESIGNATION</div>
+                <br>
+                &nbsp;&nbsp;<?php echo $row['issue_alarm_req_position'];?>
                 </p>
             </td>
         </tr>
@@ -407,16 +421,22 @@
             <td width="294" colspan="2" valign="top">
                 <p>
                 <div class="fhead">&nbsp;27. ALARM ISSUED BY</div>
+                <br>
+                &nbsp;&nbsp;<?php echo $row['alarm_issue_by'];?>
                 </p>
             </td>
             <td width="243" colspan="2" valign="top">
                 <p>
                 <div class="fhead">&nbsp;28. DATE/TIME</div>
+                <br>
+                &nbsp;&nbsp;<?php echo $row['alarm_issue_date'];?>
                 </p>
             </td>
             <td width="246" valign="top">
                 <p>
                 <div class="fhead">&nbsp;29. POSITION/DESIGNATION</div>
+                <br>
+                &nbsp;&nbsp;<?php echo $row['alarm_issue_position'];?>
                 </p>
             </td>
         </tr>
@@ -424,16 +444,22 @@
             <td width="294" colspan="2" valign="top">
                 <p align="left">
                 <div class="fhead">&nbsp;30. LIFTING OF ALARM REQUESTED BY</div>
+                <br>
+                &nbsp;&nbsp;<?php echo $row['lift_alarm_req_by'];?>
                 </p>
             </td>
             <td width="243" colspan="2" valign="top">
                 <p>
                 <div class="fhead">&nbsp;31. DATE/TIME</div>
+                <br>
+                &nbsp;&nbsp;<?php echo $row['lift_alarm_req_date'];?>
                 </p>
             </td>
             <td width="246" valign="top">
                 <p>
                 <div class="fhead">&nbsp;32. POSITION/DESIGNATION</div>
+                <br>
+                &nbsp;&nbsp;<?php echo $row['lift_alarm_req_position'];?>
                 </p>
             </td>
         </tr>
@@ -441,43 +467,49 @@
             <td width="294" colspan="2" valign="top">
                 <p>
                 <div class="fhead">&nbsp;33. ALARM LIFTED BY</div>
+                <br>
+                &nbsp;&nbsp;<?php echo $row['alarm_lifted_by'];?>
                 </p>
             </td>
             <td width="243" colspan="2" valign="top">
                 <p>
                 <div class="fhead">&nbsp;34. DATE/TIME</div>
+                <br>
+                &nbsp;&nbsp;<?php echo $row['alarm_lifted_date'];?>
                 </p>
             </td>
             <td width="246" valign="top">
                 <p>
-                <div class="fhead">&nbsp;35.POSITION/DESIGNATION</div>
+                <div class="fhead">&nbsp;35.POSITION/DESIGNATION</div><br>
+                &nbsp;&nbsp;<?php echo $row['alarm_lifted_position'];?>
                 </p>
             </td>
         </tr>
         <tr>
             <td width="783" colspan="5" valign="top">
                 <p>
-                <div class="fhead">&nbsp;36. REASON FOR LIFTING ALARM</div>
-                </p>
-                <p>
-                <div class="fhead">&nbsp;[ ] PERSON RECOVERED [ ] PERSON RETURNED [ ] FALSE ALARM</div>
+                <div class="fhead">&nbsp;36. REASON FOR LIFTING ALARM</div><br>
+                &nbsp;&nbsp;<?php echo $row['reason_lift'];?>
                 </p>
             </td>
         </tr>
         <tr>
             <td width="294" colspan="2" valign="top">
                 <p>
-                <div class="fhead">&nbsp;37.SIGNATURE OF SUPERVISOR</div>
+                <div class="fhead">&nbsp;37.SIGNATURE OF SUPERVISOR</div><br>
+                &nbsp;&nbsp;
                 </p>
             </td>
             <td width="243" colspan="2" valign="top">
                 <p>
-                <div class="fhead">&nbsp;38. DATE/TIME</div>
+                <div class="fhead">&nbsp;38. DATE/TIME</div><br>
+                &nbsp;&nbsp;
                 </p>
             </td>
             <td width="246" valign="top">
                 <p>
-                <div class="fhead">&nbsp;39.POSITION/DESIGNATION</div>
+                <div class="fhead">&nbsp;39.POSITION/DESIGNATION</div><br>
+                &nbsp;&nbsp;
                 </p>
             </td>
         </tr>
@@ -505,7 +537,7 @@
                          ?>
             </div>
             <center>
-            <button onclick="printDiv('printArea')">Download this form</button>
+            <button class="btn btn-primary fa fa-download" onclick="printDiv('printArea')"> &nbsp;Download this form</button><br><br>
             </center>
             
                 </div>
