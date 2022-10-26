@@ -259,7 +259,7 @@ $(function () {
                     <li>
                         <a href="notification.php">
                             <i class="fa fa-cog"></i>
-                            Notifications
+                            Report Status
                         </a>
                     </li>
                     <?php } ?>

@@ -133,7 +133,7 @@
                     <li class="active">
                         <a href="notification.php">
                             <i class="fa fa-bell"></i>
-                            Notifications
+                            Report Status
                         </a>
                     </li>
                     <li>
@@ -203,17 +203,22 @@
                             <td><?php echo $row['case_num'];?></td>
                             <td><?php echo $row['fullname'];?></td> 
                             <td><?php if ($row['status']==0) {
-                                echo 'pending';
+                                echo 'Pending';
                             } else if ($row['status']==1) {
-                                echo 'accepted';
+                                echo 'Accepted';
                             } else if ($row['status']==2) {
-                                echo 'rejected';
+                                echo 'Requesting issuance of alarm';
                             } else if ($row['status']==3) {
-                                echo 'cold case';
+                                echo 'Alarm has been issued';
                             } else if ($row['status']==4) {
-                                echo 'found';
-                            }
-                            ;?></td>
+                                echo 'Requesting lift of alarm';
+                            } else if ($row['status']==5) {
+                                echo 'Alarm has been lifted';
+                            } else if ($row['status']==6) {
+                                echo 'Found';
+                            } else if ($row['status']==7) {
+                                echo 'Rejected';
+                            }?></td>
                           <td>
                   <a href="function/archive.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-danger"><span class="fa fa-times"></span> Status</a>
                    || 
