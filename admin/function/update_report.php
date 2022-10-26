@@ -7,6 +7,14 @@ date_default_timezone_set('Asia/Manila');
 if (isset($_POST['update_form'])) {
  
     $id = $_POST['id'];
+    $status;
+
+    $query=mysqli_query($mysqli,"select status from `reports` where id = $id");
+        while($row=mysqli_fetch_array($query)) {
+            $status = $row['status'];
+            echo $status;
+        }
+    
 
     $issue_alarm_req_by = $_POST['issue_alarm_req_by'];
 
@@ -48,7 +56,7 @@ if (isset($_POST['update_form'])) {
 
 // $sql="UPDATE reports SET status = '1' + '1' , issue_alarm_req_by = '$issue_alarm_req_by', issue_alarm_req_date = '$issue_alarm_send', issue_alarm_req_position = '$issue_alarm_req_position', alarm_issue_by = '$alarm_issue_by', alarm_issue_date = '$alarm_d_send', alarm_issue_position = '$alarm_issue_position', lift_alarm_req_by = '$lift_alarm_req_by', lift_alarm_req_date = '$lift_alarm_req_send', lift_alarm_req_position = '$lift_alarm_req_position', alarm_lifted_by = '$alarm_lifted_by', alarm_lifted_date = '$alarm_lifted_send', alarm_lifted_position = '$alarm_lifted_position', reason_lift = '$reason_lift' WHERE id=$id";
 
-$sql="UPDATE reports SET status = '1' + '1' , issue_alarm_req_by = '$issue_alarm_req_by', issue_alarm_req_date = '$issue_alarm_req_date', issue_alarm_req_position = '$issue_alarm_req_position', alarm_issue_by = '$alarm_issue_by', alarm_issue_date = '$alarm_issue_date', alarm_issue_position = '$alarm_issue_position', lift_alarm_req_by = '$lift_alarm_req_by', lift_alarm_req_date = '$lift_alarm_req_date', lift_alarm_req_position = '$lift_alarm_req_position', alarm_lifted_by = '$alarm_lifted_by', alarm_lifted_date = '$alarm_lifted_date', alarm_lifted_position = '$alarm_lifted_position', reason_lift = '$reason_lift' WHERE id=$id";
+$sql="UPDATE reports SET status = status + 1 , issue_alarm_req_by = '$issue_alarm_req_by', issue_alarm_req_date = '$issue_alarm_req_date', issue_alarm_req_position = '$issue_alarm_req_position', alarm_issue_by = '$alarm_issue_by', alarm_issue_date = '$alarm_issue_date', alarm_issue_position = '$alarm_issue_position', lift_alarm_req_by = '$lift_alarm_req_by', lift_alarm_req_date = '$lift_alarm_req_date', lift_alarm_req_position = '$lift_alarm_req_position', alarm_lifted_by = '$alarm_lifted_by', alarm_lifted_date = '$alarm_lifted_date', alarm_lifted_position = '$alarm_lifted_position', reason_lift = '$reason_lift' WHERE id=$id";
 
 // $sqli="UPDATE notification SET status = '1' WHERE request_id=$id";
 
@@ -56,6 +64,7 @@ $sql="UPDATE reports SET status = '1' + '1' , issue_alarm_req_by = '$issue_alarm
 { 
 
     echo "<script>alert('Successfully Updated!'); window.location='../view_process.php'</script>"; 
+    // echo "<script>alert('Successfully Updated!'); "; 
 } 
 else
 { 
