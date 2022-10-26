@@ -90,9 +90,9 @@ $eprow=mysqli_fetch_array($sqlE);
                     
                     ?>
                     <li>
-                        <a href="request_archives.php">
+                        <a href="rejected_request.php">
                             <i class="fa fa-table"></i>
-                            Request Archives
+                            Rejected Reports
                         </a>
                     </li>
                     <?php }?>

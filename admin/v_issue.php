@@ -88,9 +88,9 @@
                     
                     ?>
                     <li>
-                        <a href="request_archives.php">
+                        <a href="rejected_request.php">
                             <i class="fa fa-table"></i>
-                            Request Archives
+                            Rejected Reports
                         </a>
                     </li>
                     <?php }?>
@@ -199,15 +199,15 @@
                             <td><?php echo $row['gender'];?></td>  
                             <td><?php echo $row['address'];?></td>
                             <td><?php if ($row['status']==0) {
-                                echo 'pending';
+                                echo 'Pending';
                             } else if ($row['status']==1) {
-                                echo 'accepted';
+                                echo 'Ongoing Case';
                             } else if ($row['status']==2) {
-                                echo 'rejected';
+                                echo 'Rejected';
                             } else if ($row['status']==3) {
-                                echo 'cold case';
+                                echo 'Cold Case';
                             } else if ($row['status']==4) {
-                                echo 'found';
+                                echo 'Found';
                             }?></td>
                             <td><?php echo $row['username'];?></td>
                             <td><?php echo $row['accepted_by'];?></td>
@@ -215,9 +215,9 @@
                             <td><?php echo $row['accepted_date'];?></td>
 
                             <td>
-                  <a href="function/archive.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-danger"><span class="fa fa-times"></span> Remove</a>
-                   || 
-                  <a href="view_report_details.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-warning"><span class="fa fa-pencil"></span> View</a> 
+                  <a href="function/archive.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-primary"><span class="fa fa-check"></span> Found</a><br> <br> 
+                  <a href="view_report_details.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-warning"><span class="fa fa-eye"></span> View</a><br> <br> 
+                  <a href="function/archive.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-danger"><span class="fa fa-times"></span> Remove</a> 
                               </td>
                           </tr>
                           <?php

@@ -37,25 +37,13 @@
                            Dashboard
                         </a>
                     </li>
-                              <?php
-                    if($_SESSION['permission']==1 or $_SESSION['permission']==2 ){
-                        
-                    
-                    ?>
-                    <li>
-                        <a href="a_employees.php">
-                            <i class="fa fa-plus"></i>
-                            Add Desk Officer
-                        </a>
-                      
-                    </li>
-                    <?php }?>
-                    <li>
-                        <a href="all_employees.php">
+                    <li class="active">
+                        <a href="view_missing_person.php">
                             <i class="fa fa-table"></i>
-                           All Desk Officers
+                            View Missing Persons
                         </a>
-                    </li>
+                    </li>   
+                   
                     <li>
                         <a href="invest.php">
                             <i class="fa fa-link"></i>
@@ -68,18 +56,30 @@
                     
                     ?>
                     <li>
+                        <a href="a_employees.php">
+                            <i class="fa fa-plus"></i>
+                            Add Desk Officer
+                        </a>
+                      
+                    </li>
+                     <li>
+                        <a href="all_employees.php">
+                            <i class="fa fa-table"></i>
+                           All Desk Officers
+                        </a>
+                    </li>
+                    <li>
                         <a href="v_issue.php">
                             <i class="fa fa-table"></i>
                             View Missing Reports
                         </a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="requests.php">
                             <i class="fa fa-table"></i>
-                            View Pending Reports
+                            View Pending Requests
                         </a>
                     </li>
-
                     <?php }?>
 
                     <?php
@@ -166,180 +166,84 @@
     <div class="panel panel-default sammacmedia">
             <div class="panel-heading">All Issues</div>
         <div class="panel-body">
+                <table class="table table-striped thead-dark table-bordered table-hover" id="myTable" >    
+                <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Image</th>
+                    <th>Subject Name</th>
+                    <th>Age</th>
+                    <th>Sex</th>
+                    <th>Last seen date</th>
+                    <th>Last seen place</th>
+                    <th>Action</th> 
 
-
+                    
+                    
+                    </tr>
+                </thead>
                     <?php
-                    $id = $_GET['id'];
-                    $query=mysqli_query($mysqli,"select * from `requests` where id = $id");
+                                   $a=1;
+                    $query=mysqli_query($mysqli,"select *from `reports` where status=4");
                      while($row=mysqli_fetch_array($query))
-                      
                         {
-                          
+                          $id = $row['id'];
                           ?>
+                          <tr>
+                            <td><?php echo $a;?></td> 
+                            <td><img src="assets/image/missing_person/<?php echo $row["recentphoto"]; ?>" alt="Avatar" style="width:390px"></td>
+                            <td><?php echo $row['fullname'];?></td>
+                            <td><?php echo $row['age'];?></td>  
+                            <td><?php echo $row['gender'];?></td>
+                            <td><?php echo $row['last_seen_date'];?></td>
+                            <td><?php echo $row['lastloc'];?></td>
+                            <td>
+                  <a href="function/archive.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-primary"><span class="fa fa-download"></span> Download  Poster</a>
+                   || 
+                  <a href="view_report_details.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-warning"><span class="fa fa-pencil"></span> View</a> 
+                              </td>
+                          </tr>
+                          <?php
+                          $a++;
+                      }
+                       
 
-              <center>                       
-<p>
-    <div class="fhead"><strong>MISSING PERSON ALARM SHEET</strong></div>
-</p>
-<p>
-    <strong></strong>
-</p>
-<table border="1" cellspacing="0" cellpadding="0" width="783">
-    <tbody>
-        <tr>
-            <td width="264" valign="top">
-                <p>
-                    <div class="fhead">&nbsp;1. ALARM ID.&nbsp;&nbsp;&nbsp;<?php echo $row['id'];?></div>
-                </p>
-            </td>
-            <td width="519" colspan="4" valign="top">
-            </td>
-        </tr>
-        <tr>
-            <td width="264" valign="top">
-                <p>
-                    <div class="fhead">&nbsp;2.NATURE OF ALARM</div>
-                </p>
-                <p>
-                    <div class="fhead">&nbsp;[/] MISSING</div>
-                </p>
-            </td>
-            <td width="273" colspan="3" valign="top">
-                <p>
-                    <div class="fhead">&nbsp;3. PLACE WHERE LAST SEEN</div><br>
-                    &nbsp;&nbsp;<?php echo $row['lastloc'];?>
-                </p>
-            </td>
-            <td width="246" valign="top">
-                <p>
-                    <div class="fhead">&nbsp;4. DATE/TIME</div><br>
-                    &nbsp;&nbsp;<?php echo $row['filed_date'];?>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td width="264" valign="top">
-                <p>
-                    <div class="fhead">&nbsp;5. NAME OF SUBJECT</div><br>
-                    &nbsp;&nbsp;<?php echo $row['fullname'];?>
-                </p>
-            </td>
-            <td width="273" colspan="3" valign="top">
-                <p>
-                    <div class="fhead">&nbsp;6. ALIAS (ES)</div><br>
-                    &nbsp;&nbsp;<?php echo $row['alias'];?>
-                </p>
-            </td>
-            <td width="246" valign="top">
-                <p>
-                    <div class="fhead">&nbsp;7. ADDRESS</div><br>
-                    &nbsp;&nbsp;<?php echo $row['address'];?>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td width="537" colspan="4" valign="top">
-                <p>
-                    <div class="fhead">&nbsp;8. DESCRIPTION:</div>
-                </p>
-                <p>
-                    <div class="fhead">&nbsp;SEX:&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['gender'];?></div>
-                </p>
-                <p>
-                    <div class="fhead">&nbsp;NATIONALITY:&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['race'];?></div>
-                </p>
-                <p>
-                    <div class="fhead">&nbsp;AGE:&nbsp;&nbsp;&nbsp;&nbsp;</div>
-                </p>
-                <p>
-                    <div class="fhead">&nbsp;COMPLEXION:&nbsp;&nbsp;&nbsp;&nbsp;</div>
-                </p>
-                <p>
-                    <div class="fhead">&nbsp;HEIGHT:&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['height'];?></div>
-                </p>
-                <p>
-                    <div class="fhead">&nbsp;WEIGHT:&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['weight'];?></div>
-                </p>
-                <p>
-                    <div class="fhead">&nbsp;BUILD:&nbsp;&nbsp;&nbsp;&nbsp;
-                </p></div>
-                <p>
-                    <div class="fhead">&nbsp;HAIR:&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['hairstate'];?>&nbsp;<?php echo $row['haircolor'];?></div>
-                </p>
-                <p>
-                    <div class="fhead">&nbsp;PECULIARITIES:&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['defect'];?></div>
-                </p>
-                <p>
-                    <div class="fhead">&nbsp;OTHER IDENTIFICATION DATA:&nbsp;&nbsp;&nbsp;&nbsp;</div>
-                </p>
-            </td>
-            <td width="246" valign="top">
-                <p>
-                    <div class="fhead">&nbsp;9. PHOTO</div><img src="assets/image/missing_person/<?php echo $row["recentphoto"]; ?>" alt="Avatar" style="width:100%" class="photo">
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td width="783" colspan="5" valign="top">
-                <p>
-                    <div class="fhead">&nbsp;10 ADDITIONAL INFO ON SUBJECT<br>
-                    &nbsp;&nbsp;<?php echo $row['others'];?></div>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td width="264" valign="top">
-                <p>
-                    <div class="fhead">&nbsp;11.COMPLAINANT/INFORMANT</div><br>
-                    &nbsp;&nbsp;<?php echo $row['comp_name'];?>
-                </p>
-            </td>
-            <td width="273" colspan="3" valign="top">
-                <p>
-                    <div class="fhead">&nbsp;12. ADDRESS</div><br>
-                    &nbsp;&nbsp;<?php echo $row['comp_address'];?>
-                </p>
-            </td>
-            <td width="246" valign="top">
-                <p>
-                    <div class="fhead">&nbsp;13. TEL NO.</div><br>
-                    &nbsp;&nbsp;<?php echo $row['phone'];?>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td width="264" valign="top">
-                <p align="left">
-                    <div class="fhead">&nbsp;14. RELATIONSHIP OF &nbsp;COMPLAINANT/INFORMANT TO &nbsp;SUBJECT</div><br>
-                    &nbsp;&nbsp;<?php echo $row['relation'];?>
-                </p>
-            </td>
-            <td width="273" colspan="3" valign="top">
-                <p align="left">
-                    <div class="fhead">&nbsp;15. REPORTED TO OTHER AGENCY</div>
-                </p>
-                <p>
-                    <div class="fhead">&nbsp;[ ] YES [ ] NO</div>
-                </p>
-                <p align="left">
-                    <div class="fhead">&nbsp;If yes, what &nbsp;agency&nbsp;<?php echo $row['agency'];?></div>
-                </p>
-            </td>
-            <td width="246" valign="top">
-                <p>
-                    <div class="fhead">&nbsp;16. DATE/TIME REPORTED</div><br>
-                    &nbsp;&nbsp;<?php echo $row['filed_date'];?>
-                </p>
-            </td>
-        </tr>
-    </tbody>
-</table>
-</center>
-
+          
+                      if (isset($_GET['idx']) && is_numeric($_GET['idx']))
+                      {
+                          $id = $_GET['idx'];
+                          if ($stmt = $mysqli->prepare("DELETE FROM reports WHERE id = ? LIMIT 1"))
+                          {
+                              $stmt->bind_param("i",$id);
+                              $stmt->execute();
+                              $stmt->close();
+                               ?>
+                    <div class="alert alert-success strover" id="sams1">
+                    <a href="#" class="close" data-dismiss="alert">&times;</a>
+                    <strong> Successfully! </strong><?php echo'Record Successfully deleted please refresh this page';?></div>
+                    
+                    <?php
+                          }
+                          else
+                          {
+                    ?>
+                    <div class="alert alert-danger samuel" id="sams1">
+                    <a href="#" class="close" data-dismiss="alert">&times;</a>
+                    <strong> Danger! </strong><?php echo'OOPS please try again something went wrong';?></div>
                     <?php
                           }
                           $mysqli->close();
-                         ?>
+
+                      }
+                else
+
+                {
+
+                }
+                      ?>
+              
+               
+                </table>
             </div>
                 </div>
                 <div class="line"></div>

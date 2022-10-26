@@ -320,3 +320,40 @@ function onClick(element) {
 <script>$('.carousel').carousel()</script>
 </body>
 </html>
+
+<div class="cards">
+      <?php
+    $sql= mysqli_query($mysqli,"SELECT * FROM reports WHERE status=1 ORDER BY id ASC");
+    if (!empty($sql)) { 
+        while ($row=mysqli_fetch_array($sql)) {
+        $id = $row['id'];
+    ?>
+  
+<div class="card" style="border-radius: 5px; overflow: hidden;">
+    <?php
+    if($_SESSION['permission']==1  or $_SESSION['permission']==2 ){
+    ?>
+    <a href="view_report_details.php?id=<?php echo $id; ?>">   
+    <img src="assets/image/missing_person/<?php echo $row["recentphoto"]; ?>" alt="Avatar" style="width:100%" class="photo">
+    </a>
+    <?php } else if ($_SESSION['permission']==3) { ?>
+        <a href="view_details.php?id=<?php echo $id; ?>">   
+    <img src="assets/image/missing_person/<?php echo $row["recentphoto"]; ?>" alt="Avatar" style="width:100%" class="photo">
+    </a>
+    <?php } ?>
+  <div class="containers">
+    <h4><b><?php echo $row["fullname"]; ?></b></h4> 
+    <p>Age: <?php echo $row["age"]; ?></p>
+    <p>Sex: <?php echo $row["gender"]; ?></p> 
+    <p>Last seen date:<br> <?php $date = date_create($row["last_seen_date"]); echo date_format($date, "F d, Y h:i:sa"); ?></p>  
+  </div>
+</div> 
+
+<?php
+        }
+    }  else {
+
+     echo "No Records."; 
+
+    }
+    ?>

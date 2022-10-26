@@ -88,9 +88,9 @@
                     
                     ?>
                     <li class="active">
-                        <a href="request_archives.php">
+                        <a href="rejected_request.php">
                             <i class="fa fa-table"></i>
-                            Request Archives
+                            Rejected Reports
                         </a>
                     </li>
                     <?php }?>
@@ -182,7 +182,7 @@
                 </thead>
                     <?php
                                    $a=1;
-                    $query=mysqli_query($mysqli,"select *from `request_archives` ");
+                    $query=mysqli_query($mysqli,"select *from `reports` where status=2");
                      while($row=mysqli_fetch_array($query))
                         {
                           
