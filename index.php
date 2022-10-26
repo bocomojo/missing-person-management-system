@@ -345,7 +345,7 @@ function onClick(element) {
     <h4><b><?php echo $row["fullname"]; ?></b></h4> 
     <p>Age: <?php echo $row["age"]; ?></p>
     <p>Sex: <?php echo $row["gender"]; ?></p> 
-    <p>Last seen date:<br> <?php $date = date_create($row["last_seen_date"]); echo date_format($date, "F d, Y h:i:sa"); ?></p>  
+    <p>Last seen date:<br> <?php $date = date_create($row["last_seen_date"]); echo date_format($date, "F d, Y h:i:s A"); ?></p>  
   </div>
 </div> 
 

@@ -231,7 +231,7 @@
             <td width="246" valign="top">
                 <p>
                     <div class="fhead">&nbsp;4. DATE/TIME</div><br>
-                    &nbsp;&nbsp;<?php $date = date_create($row["last_seen_date"]); echo date_format($date, "F d, Y h:i:sa"); ?>
+                    &nbsp;&nbsp;<?php $date = date_create($row["last_seen_date"]); echo date_format($date, "F d, Y h:i:s A"); ?>
                 </p>
             </td>
         </tr>
@@ -346,7 +346,7 @@
             <td width="246" valign="top">
                 <p>
                     <div class="fhead">&nbsp;16. DATE/TIME REPORTED</div><br>
-                    &nbsp;&nbsp;<?php $date = date_create($row["filed_date"]); echo date_format($date, "F d, Y h:i:sa"); ?>
+                    &nbsp;&nbsp;<?php $date = date_create($row["filed_date"]); echo date_format($date, "F d, Y h:i:s A"); ?>
                 </p>
             </td>
         </tr>
@@ -400,21 +400,49 @@
             <td width="294" colspan="2" valign="top">
                 <p align="left">
                 <div class="fhead">&nbsp;24. ISSUANCE OF ALARM REQUESTED BY</div><br>
-                &nbsp;&nbsp;<input type="text" class="form-control" name="issue_alarm_req_by">
+                &nbsp;&nbsp;<input type="text" class="form-control" name="issue_alarm_req_by" value="<?php echo $row["issue_alarm_req_by"]; ?>">
                 </p>
             </td>
             <td width="243" colspan="2" valign="top">
                 <p>
                 <div class="fhead">&nbsp;25. DATE/TIME</div>
                 <br>
-                &nbsp;&nbsp;<input type="datetime-local" class="form-control" name="issue_alarm_req_date">
+                &nbsp;&nbsp;<input type="datetime-local" class="form-control" name="issue_alarm_req_date" value="<?php
+                echo $row["issue_alarm_req_date"];
+                 ?>">
                 </p>
             </td>
             <td width="246" valign="top">
                 <p>
                 <div class="fhead">&nbsp;26. POSITION/DESIGNATION</div>
                 <br>
-                &nbsp;&nbsp;<input type="text" class="form-control" name="issue_alarm_req_position">
+                &nbsp;&nbsp;
+                <select class="form-control" name="issue_alarm_req_position">
+                    <?php
+                    switch ($row["issue_alarm_req_position"]) {
+                        case 1:
+                          echo "<option value='1' selected>Chief of Police</option>";
+                          echo "<option value='2'>Police Major</option>";
+                          echo "<option value='3'>Police Captain</option>";
+                          break;
+                        case 2:
+                            echo "<option value='1'>Chief of Police</option>";
+                            echo "<option value='2' selected>Police Major</option>";
+                            echo "<option value='3'>Police Captain</option>";
+                          break;
+                        case 3:
+                            echo "<option value='1'>Chief of Police</option>";
+                            echo "<option value='2'>Police Major</option>";
+                            echo "<option value='3' selected>Police Captain</option>";
+                          break;
+                        default:
+                            echo "<option value='' selected>Choose here</option>";
+                            echo "<option value='1'>Chief of Police</option>";
+                            echo "<option value='2'>Police Major</option>";
+                            echo "<option value='3'>Police Captain</option>";
+                      }
+                    ?>
+                </select>
                 </p>
             </td>
         </tr>
@@ -423,21 +451,50 @@
                 <p>
                 <div class="fhead">&nbsp;27. ALARM ISSUED BY</div>
                 <br>
-                &nbsp;&nbsp;<input type="text" class="form-control" name="alarm_issue_by">
+                &nbsp;&nbsp;<input type="text" class="form-control" name="alarm_issue_by" value="<?php echo $row["alarm_issue_by"]; ?>">
                 </p>
             </td>
             <td width="243" colspan="2" valign="top">
                 <p>
                 <div class="fhead">&nbsp;28. DATE/TIME</div>
                 <br>
-                &nbsp;&nbsp;<input type="datetime-local" class="form-control" name="alarm_issue_date">
+                &nbsp;&nbsp;<input type="datetime-local" class="form-control" name="alarm_issue_date" value="<?php
+                echo $row["alarm_issue_date"];
+                 ?>">
                 </p>
             </td>
             <td width="246" valign="top">
                 <p>
                 <div class="fhead">&nbsp;29. POSITION/DESIGNATION</div>
                 <br>
-                &nbsp;&nbsp;<input type="text" class="form-control" name="alarm_issue_position">
+                &nbsp;&nbsp;
+                <select class="form-control" name="alarm_issue_position">
+                    <?php
+                    switch ($row["alarm_issue_position"]) {
+                        case 1:
+                          echo "<option value='1' selected>Chief of Police</option>";
+                          echo "<option value='2'>Police Major</option>";
+                          echo "<option value='3'>Police Captain</option>";
+                          break;
+                        case 2:
+                            echo "<option value='1'>Chief of Police</option>";
+                            echo "<option value='2' selected>Police Major</option>";
+                            echo "<option value='3'>Police Captain</option>";
+                          break;
+                        case 3:
+                            echo "<option value='1'>Chief of Police</option>";
+                            echo "<option value='2'>Police Major</option>";
+                            echo "<option value='3' selected>Police Captain</option>";
+                          break;
+                        default:
+                            echo "<option value='' selected>Choose here</option>";
+                            echo "<option value='1'>Chief of Police</option>";
+                            echo "<option value='2'>Police Major</option>";
+                            echo "<option value='3'>Police Captain</option>";
+                        
+                      }
+                    ?>
+                </select>
                 </p>
             </td>
         </tr>
@@ -446,21 +503,50 @@
                 <p align="left">
                 <div class="fhead">&nbsp;30. LIFTING OF ALARM REQUESTED BY</div>
                 <br>
-                &nbsp;&nbsp;<input type="text" class="form-control" name="lift_alarm_req_by">
+                &nbsp;&nbsp;<input type="text" class="form-control" name="lift_alarm_req_by" value="<?php echo $row["lift_alarm_req_by"]; ?>">
                 </p>
             </td>
             <td width="243" colspan="2" valign="top">
                 <p>
                 <div class="fhead">&nbsp;31. DATE/TIME</div>
                 <br>
-                &nbsp;&nbsp;<input type="datetime-local" class="form-control" name="lift_alarm_req_date">
+                &nbsp;&nbsp;<input type="datetime-local" class="form-control" name="lift_alarm_req_date" value="<?php
+                echo $row["lift_alarm_req_date"];
+                 ?>">
                 </p>
             </td>
             <td width="246" valign="top">
                 <p>
                 <div class="fhead">&nbsp;32. POSITION/DESIGNATION</div>
                 <br>
-                &nbsp;&nbsp;<input type="text" class="form-control" name="lift_alarm_req_position">
+                &nbsp;&nbsp;
+                <select class="form-control" name="lift_alarm_req_position">
+                    <?php
+                    switch ($row["lift_alarm_req_position"]) {
+                        case 1:
+                          echo "<option value='1' selected>Chief of Police</option>";
+                          echo "<option value='2'>Police Major</option>";
+                          echo "<option value='3'>Police Captain</option>";
+                          break;
+                        case 2:
+                            echo "<option value='1'>Chief of Police</option>";
+                            echo "<option value='2' selected>Police Major</option>";
+                            echo "<option value='3'>Police Captain</option>";
+                          break;
+                        case 3:
+                            echo "<option value='1'>Chief of Police</option>";
+                            echo "<option value='2'>Police Major</option>";
+                            echo "<option value='3' selected>Police Captain</option>";
+                          break;
+                        default:
+                            echo "<option value='' selected>Choose here</option>";
+                            echo "<option value='1'>Chief of Police</option>";
+                            echo "<option value='2'>Police Major</option>";
+                            echo "<option value='3'>Police Captain</option>";
+                        
+                      }
+                    ?>
+                </select>
                 </p>
             </td>
         </tr>
@@ -469,20 +555,49 @@
                 <p>
                 <div class="fhead">&nbsp;33. ALARM LIFTED BY</div>
                 <br>
-                &nbsp;&nbsp;<input type="text" class="form-control" name="alarm_lifted_by">
+                &nbsp;&nbsp;<input type="text" class="form-control" name="alarm_lifted_by" value="<?php echo $row["alarm_lifted_by"]; ?>">
                 </p>
             </td>
             <td width="243" colspan="2" valign="top">
                 <p>
                 <div class="fhead">&nbsp;34. DATE/TIME</div>
                 <br>
-                &nbsp;&nbsp;<input type="datetime-local" class="form-control" name="alarm_lifted_date">
+                &nbsp;&nbsp;<input type="datetime-local" class="form-control" name="alarm_lifted_date" value="<?php
+                echo $row["alarm_lifted_date"];
+                 ?>">
                 </p>
             </td>
             <td width="246" valign="top">
                 <p>
                 <div class="fhead">&nbsp;35.POSITION/DESIGNATION</div><br>
-                &nbsp;&nbsp;<input type="text" class="form-control" name="alarm_lifted_position">
+                &nbsp;&nbsp;
+                <select class="form-control" name="alarm_lifted_position">
+                    <?php
+                    switch ($row["alarm_lifted_position"]) {
+                        case 1:
+                          echo "<option value='1' selected>Chief of Police</option>";
+                          echo "<option value='2'>Police Major</option>";
+                          echo "<option value='3'>Police Captain</option>";
+                          break;
+                        case 2:
+                            echo "<option value='1'>Chief of Police</option>";
+                            echo "<option value='2' selected>Police Major</option>";
+                            echo "<option value='3'>Police Captain</option>";
+                          break;
+                        case 3:
+                            echo "<option value='1'>Chief of Police</option>";
+                            echo "<option value='2'>Police Major</option>";
+                            echo "<option value='3' selected>Police Captain</option>";
+                          break;
+                        default:
+                            echo "<option value='' selected>Choose here</option>";
+                            echo "<option value='1'>Chief of Police</option>";
+                            echo "<option value='2'>Police Major</option>";
+                            echo "<option value='3'>Police Captain</option>";
+                        
+                      }
+                    ?>
+                </select>
                 </p>
             </td>
         </tr>
@@ -490,7 +605,7 @@
             <td width="783" colspan="5" valign="top">
                 <p>
                 <div class="fhead">&nbsp;36. REASON FOR LIFTING ALARM</div><br>
-                &nbsp;&nbsp;<input type="text" class="form-control" name="reason_lift">
+                &nbsp;&nbsp;<input type="text" class="form-control" name="reason_lift"  value="<?php echo $row["reason_lift"]; ?>">
                 </p>
             </td>
         </tr>

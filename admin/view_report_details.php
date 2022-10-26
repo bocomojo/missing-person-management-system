@@ -1,5 +1,6 @@
 <?php require_once('includes/session.php');
       require_once('includes/conn.php');
+      date_default_timezone_set('Asia/Manila');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -230,7 +231,7 @@
             <td width="246" valign="top">
                 <p>
                     <div class="fhead">&nbsp;4. DATE/TIME</div><br>
-                    &nbsp;&nbsp;<?php $date = date_create($row["last_seen_date"]); echo date_format($date, "F d, Y h:i:sa"); ?>
+                    &nbsp;&nbsp;<?php $date = date_create($row["last_seen_date"]); echo date_format($date, "F d, Y h:i:s A"); ?>
                 </p>
             </td>
         </tr>
@@ -345,7 +346,7 @@
             <td width="246" valign="top">
                 <p>
                     <div class="fhead">&nbsp;16. DATE/TIME REPORTED</div><br>
-                    &nbsp;&nbsp;<?php $date = date_create($row["filed_date"]); echo date_format($date, "F d, Y h:i:sa"); ?>
+                    &nbsp;&nbsp;<?php $date = date_create($row["filed_date"]); echo date_format($date, "F d, Y h:i:s A"); ?>
                 </p>
             </td>
         </tr>
@@ -359,7 +360,7 @@
             <td width="273" colspan="3" valign="top">
                 <p>
                 <div class="fhead">&nbsp;18. DATE/TIME</div><br>
-                &nbsp;&nbsp;<?php echo $row['accepted_date'];?>
+                &nbsp;&nbsp;<?php $date = date_create($row["accepted_date"]); echo date_format($date, "F d, Y h:i:s A");?>
                 </p>
             </td>
             <td width="246" valign="top">
@@ -406,14 +407,32 @@
                 <p>
                 <div class="fhead">&nbsp;25. DATE/TIME</div>
                 <br>
-                &nbsp;&nbsp;<?php $date = date_create($row["issue_alarm_req_date"]); echo date_format($date, "F d, Y h:i:sa"); ?>
+                &nbsp;&nbsp;<?php
+                $date_alarm_req = date_create($row["issue_alarm_req_date"]);
+                
+                if (!empty($row["issue_alarm_req_date"])) {
+                    echo date_format($date_alarm_req, "F d, Y h:i:s A");
+                }
+                 ?>
                 </p>
             </td>
             <td width="246" valign="top">
                 <p>
                 <div class="fhead">&nbsp;26. POSITION/DESIGNATION</div>
                 <br>
-                &nbsp;&nbsp;<?php echo $row['issue_alarm_req_position'];?>
+                &nbsp;&nbsp;<?php
+                switch ($row['issue_alarm_req_position']) {
+                    case 1:
+                      echo "Chief of Police";
+                      break;
+                    case 2:
+                        echo "Police Major";
+                      break;
+                    case 3:
+                        echo "Police Captain";
+                      break;                    
+                  }
+                ?>
                 </p>
             </td>
         </tr>
@@ -429,14 +448,36 @@
                 <p>
                 <div class="fhead">&nbsp;28. DATE/TIME</div>
                 <br>
-                &nbsp;&nbsp;<?php $date = date_create($row["alarm_issue_date"]); echo date_format($date, "F d, Y h:i:sa"); ?>
+                &nbsp;&nbsp;<?php 
+                    // $date_alarm_issued = date_create($row["alarm_issue_date"]); echo date_format($date_alarm_issued, "F d, Y h:i:s A"); 
+                    // echo $row["alarm_issue_date"];
+                    
+                    $date_alarm_issued = date_create($row["alarm_issue_date"]);
+                    if (!empty($row["alarm_issue_date"])) {
+                        echo date_format($date_alarm_issued, "F d, Y h:i:s A");
+                    }
+
+                ?>
                 </p>
             </td>
             <td width="246" valign="top">
                 <p>
                 <div class="fhead">&nbsp;29. POSITION/DESIGNATION</div>
                 <br>
-                &nbsp;&nbsp;<?php echo $row['alarm_issue_position'];?>
+                &nbsp;&nbsp;
+                <?php
+                switch ($row['alarm_issue_position']) {
+                    case 1:
+                      echo "Chief of Police";
+                      break;
+                    case 2:
+                        echo "Police Major";
+                      break;
+                    case 3:
+                        echo "Police Captain";
+                      break;                    
+                  }
+                ?>
                 </p>
             </td>
         </tr>
@@ -452,14 +493,34 @@
                 <p>
                 <div class="fhead">&nbsp;31. DATE/TIME</div>
                 <br>
-                &nbsp;&nbsp;<?php $date = date_create($row["lift_alarm_req_date"]); echo date_format($date, "F d, Y h:i:sa"); ?>
+                &nbsp;&nbsp;<?php
+                $date_lifting = date_create($row["lift_alarm_req_date"]);
+                if (!empty($row["lift_alarm_req_date"])) {
+                    echo date_format($date_lifting, "F d, Y h:i:s A");
+                }
+                
+                // echo $row["lift_alarm_req_date"];
+                ?>
                 </p>
             </td>
             <td width="246" valign="top">
                 <p>
                 <div class="fhead">&nbsp;32. POSITION/DESIGNATION</div>
                 <br>
-                &nbsp;&nbsp;<?php echo $row['lift_alarm_req_position'];?>
+                &nbsp;&nbsp;
+                <?php
+                switch ($row['lift_alarm_req_position']) {
+                    case 1:
+                      echo "Chief of Police";
+                      break;
+                    case 2:
+                        echo "Police Major";
+                      break;
+                    case 3:
+                        echo "Police Captain";
+                      break;                    
+                  }
+                ?>
                 </p>
             </td>
         </tr>
@@ -475,13 +536,34 @@
                 <p>
                 <div class="fhead">&nbsp;34. DATE/TIME</div>
                 <br>
-                &nbsp;&nbsp;<?php $date = date_create($row["alarm_lifted_date"]); echo date_format($date, "F d, Y h:i:sa"); ?>
+                &nbsp;&nbsp;<?php
+                $date_alarm_lifted = date_create($row["alarm_lifted_date"]);
+                
+                if (!empty($row["alarm_lifted_date"])) {
+                    echo date_format($date_alarm_lifted, "F d, Y h:i:s A");
+                }
+                
+                // echo $row["alarm_lifted_date"];
+                ?>
                 </p>
             </td>
             <td width="246" valign="top">
                 <p>
                 <div class="fhead">&nbsp;35.POSITION/DESIGNATION</div><br>
-                &nbsp;&nbsp;<?php echo $row['alarm_lifted_position'];?>
+                &nbsp;&nbsp;
+                <?php
+                switch ($row['alarm_lifted_position']) {
+                    case 1:
+                      echo "Chief of Police";
+                      break;
+                    case 2:
+                        echo "Police Major";
+                      break;
+                    case 3:
+                        echo "Police Captain";
+                      break;                    
+                  }
+                ?>
                 </p>
             </td>
         </tr>
