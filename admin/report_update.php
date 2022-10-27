@@ -400,7 +400,7 @@
             <td width="294" colspan="2" valign="top">
                 <p align="left">
                 <div class="fhead">&nbsp;24. ISSUANCE OF ALARM REQUESTED BY</div><br>
-                &nbsp;&nbsp;<input type="text" class="form-control" name="issue_alarm_req_by" value="<?php echo $row["issue_alarm_req_by"]; ?>">
+                &nbsp;&nbsp;<input type="text" class="form-control" name="issue_alarm_req_by" value="<?php echo $row["issue_alarm_req_by"]; ?>" placeholder="Enter name here">
                 </p>
             </td>
             <td width="243" colspan="2" valign="top">
@@ -451,7 +451,7 @@
                 <p>
                 <div class="fhead">&nbsp;27. ALARM ISSUED BY</div>
                 <br>
-                &nbsp;&nbsp;<input type="text" class="form-control" name="alarm_issue_by" value="<?php echo $row["alarm_issue_by"]; ?>">
+                &nbsp;&nbsp;<input type="text" class="form-control" name="alarm_issue_by" value="<?php echo $row["alarm_issue_by"]; ?>" placeholder="Enter name here">
                 </p>
             </td>
             <td width="243" colspan="2" valign="top">
@@ -503,7 +503,7 @@
                 <p align="left">
                 <div class="fhead">&nbsp;30. LIFTING OF ALARM REQUESTED BY</div>
                 <br>
-                &nbsp;&nbsp;<input type="text" class="form-control" name="lift_alarm_req_by" value="<?php echo $row["lift_alarm_req_by"]; ?>">
+                &nbsp;&nbsp;<input type="text" class="form-control" name="lift_alarm_req_by" value="<?php echo $row["lift_alarm_req_by"]; ?>" placeholder="Enter name here">
                 </p>
             </td>
             <td width="243" colspan="2" valign="top">
@@ -555,7 +555,7 @@
                 <p>
                 <div class="fhead">&nbsp;33. ALARM LIFTED BY</div>
                 <br>
-                &nbsp;&nbsp;<input type="text" class="form-control" name="alarm_lifted_by" value="<?php echo $row["alarm_lifted_by"]; ?>">
+                &nbsp;&nbsp;<input type="text" class="form-control" name="alarm_lifted_by" value="<?php echo $row["alarm_lifted_by"]; ?>" placeholder="Enter name here">
                 </p>
             </td>
             <td width="243" colspan="2" valign="top">

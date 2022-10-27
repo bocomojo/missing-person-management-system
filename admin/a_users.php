@@ -248,31 +248,31 @@
             <form method="POST" action="a_users.php" enctype="multipart/form-data">
         <div class="row form-group">
           <div class="col-lg-6">
-            <label>Name</label>
+            <label>Name<text style="color: red;">*</text></label>
               <input type="text" class="form-control" name="name" pattern="[A-Za-z]{3,}" required>
           </div>  
           <div class="col-lg-6">
-            <label>Surname</label>
+            <label>Surname<text style="color: red;">*</text></label>
               <input type="text" class="form-control" name="surname" pattern="[A-Za-z]{3,}" required>
           </div>
         </div>
         <div class="row form-group">
           <div class="col-lg-6">
-            <label>Address</label>
+            <label>Address<text style="color: red;">*</text></label>
               <input type="text" class="form-control" name="address" required>
           </div>
           <div class="col-lg-6">
-            <label>Photo</label>
+            <label>ID Photo<text style="color: red;">*</text></label>
               <input type="file" class="form-control" name="image" required>
           </div>
         </div>
         <div class="row form-group">
           <div class="col-lg-6">
-            <label>Email</label>
+            <label>Email<text style="color: red;">*</text></label>
               <input type="email" class="form-control" name="email" required>
           </div>   
           <div class="col-lg-6">
-            <label>Phone</label>
+            <label>Phone<text style="color: red;">*</text></label>
               <input type="text" class="form-control" name="phone" pattern="[0][0-9]{3}[0-9]{3}[0-9]{4}" placeholder="09XXXXXXXXX" required>
           </div>  
         </div>   
@@ -295,15 +295,15 @@
         </div>
          <div class="row form-group">
           <div class="col-lg-6">
-            <label>Username</label>
+            <label>Username<text style="color: red;">*</text></label>
               <input type="text" class="form-control" name="username" pattern="[A-Za-z]{3,}">
             </div>  
              <div class="col-lg-3">
-            <label>Password</label>
+            <label>Password<text style="color: red;">*</text></label>
               <input type="password" class="form-control" name="password">
             </div> 
               <div class="col-lg-3">
-            <label>Confirm Password</label>
+            <label>Confirm Password<text style="color: red;">*</text></label>
               <input type="password" class="form-control" name="cpassword">
             </div> 
         </div>

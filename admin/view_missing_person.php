@@ -130,12 +130,16 @@
                         </a>
                     </li>
                     <?php } ?>
+                    <?php
+                    if($_SESSION['permission']==3){
+                    ?>
                     <li>
                         <a href="notification.php">
                             <i class="fa fa-gear"></i>
                             Report Status
                         </a>
                     </li>
+                    <?php }?>
                     <li>
                         <a href="account_settings.php">
                             <i class="fa fa-cog"></i>
@@ -196,7 +200,7 @@
                 </thead>
                     <?php
                                    $a=1;
-                    $query=mysqli_query($mysqli,"select *from `reports` where status=3");
+                    $query=mysqli_query($mysqli,"select *from `reports` where status=3 or status=4");
                      while($row=mysqli_fetch_array($query))
                         {
                           $id = $row['id'];

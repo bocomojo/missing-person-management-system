@@ -383,3 +383,8 @@ a.article, a.article:hover {
      width: 100%;
   }
 }
+
+.required-field::after {
+    content: "*";
+    color: red;
+}

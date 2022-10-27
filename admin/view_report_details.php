@@ -41,7 +41,7 @@
                     <li>
                         <a href="view_missing_person.php">
                             <i class="fa fa-table"></i>
-                            View Active Cases
+                            Active Cases
                         </a>
                     </li>   
                    
@@ -360,7 +360,7 @@
             <td width="273" colspan="3" valign="top">
                 <p>
                 <div class="fhead">&nbsp;18. DATE/TIME</div><br>
-                &nbsp;&nbsp;<?php $date = date_create($row["accepted_date"]); echo date_format($date, "F d, Y h:i:s A");?>
+                &nbsp;&nbsp;<?php echo $row['accepted_date'];?>
                 </p>
             </td>
             <td width="246" valign="top">

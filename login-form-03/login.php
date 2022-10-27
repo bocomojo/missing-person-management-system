@@ -82,11 +82,11 @@ if(isset($mysqli,$_POST['submit'])){
               <hr> 
               <form action="#" method="post">
                 <div class="form-group first">
-                  <label for="username">Username</label>
+                  <label for="username">Username<text style="color: red;">*</text></label>
                   <input type="text" class="form-control" placeholder="Your Username" name="username" required>
                 </div>
                 <div class="form-group last mb-3">
-                  <label for="password">Password</label>
+                  <label for="password">Password<text style="color: red;">*</text></label>
                   <input type="password" class="form-control" placeholder="Your Password" name="password" required>
                 </div>
                 

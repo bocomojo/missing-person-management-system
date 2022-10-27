@@ -187,61 +187,61 @@
           <div class="col-lg-6">
 
 
-            <label>NAME</label>
+            <label>NAME<text style="color: red;">*</text></label>
               <input type="text" class="form-control" name="fullname" placeholder="Enter full name" required>
           </div>  
           <div class="col-lg-6">
-            <label>ALIAS(ES)</label>
+            <label>ALIAS(ES)<text style="color: red;">*</text></label>
               <input type="text" class="form-control" name="alias" placeholder="Enter alias" required>
           </div>
         </div>
         <div class="row form-group">
           <div class="col-lg-6">
-            <label>AGE</label>
+            <label>AGE<text style="color: red;">*</text></label>
               <input type="number" class="form-control" name="age" placeholder="Enter age" required>
           </div>
           <div class="col-lg-6">
-            <label>DATE OF BIRTH</label>
+            <label>DATE OF BIRTH<text style="color: red;">*</text></label>
               <input type="date" class="form-control" name="bday" required>
           </div>
         </div>
         <div class="row form-group">
           <div class="col-lg-6">
-            <label>GENDER</label>
+            <label>GENDER<text style="color: red;">*</text></label>
               <select class="form-control" name="gender">
               <option>MALE</option>
               <option>FEMALE</option>      
               </select>
           </div> 
           <div class="col-lg-6">
-            <label>ADDRESS</label>
+            <label>ADDRESS<text style="color: red;">*</text></label>
               <input type="text" class="form-control" name="address" placeholder="Enter complete address" required>
           </div>
         </div>
         <div class="row form-group">
           <div class="col-lg-6">
-            <label>RACE/NATIONALITY</label>
+            <label>RACE/NATIONALITY<text style="color: red;">*</text></label>
               <input type="text" class="form-control" name="race" placeholder="Enter race or nationality" required>
           </div>
           <div class="col-lg-6">
-            <label>MOST RECENT PHOTO</label>
+            <label>MOST RECENT PHOTO<text style="color: red;">*</text></label>
               <input type="file" class="form-control" name="recentphoto" required>
           </div>  
         </div>
         <div class="row form-group">
           <div class="col-lg-6">
-            <label>HEIGHT (CM)</label>
+            <label>HEIGHT (CM)<text style="color: red;">*</text></label>
               <input type="number" class="form-control" name="height" placeholder="Enter height" required>
           </div>   
           <div class="col-lg-6">
-            <label>WEIGHT (KG)</label>
+            <label>WEIGHT (KG)<text style="color: red;">*</text></label>
               <input type="number" class="form-control" name="weight" placeholder="Enter weight" required>
           </div>  
         </div>
         <div class="row form-group">
           <div class="col-lg-6">
             <label>CURRENT HAIR COLOR</label>
-              <input type="text" class="form-control" name="haircolor" placeholder="Enter current hair color" required>
+              <input type="text" class="form-control" name="haircolor" placeholder="Enter current hair color">
           </div>   
           <div class="col-lg-6">
             <label>CHOOSE IF NATURAL OR DYED</label>
@@ -304,19 +304,15 @@
             <label>LAST KNOWN CLOTHING</label>
               <input type="text" class="form-control" name="cloth" placeholder="Enter last known clothing and indicate color">
           </div>
-          <!--<div class="col-lg-6">
-            <label>DENTAL AND FINGERPRINT RECORDS (IF AVAILABLE)</label>
-              <input type="file" class="form-control" name="dentalfinger" required>
-          </div>-->
         </div>
 
         <div class="row form-group">
            <div class="col-lg-6">
-            <label>LAST KNOWN LOCATION</label>
+            <label>LAST KNOWN LOCATION<text style="color: red;">*</text></label>
               <input type="text" class="form-control" name="lastloc" placeholder="Enter last known location" required>
            </div>
            <div class="col-lg-6">
-            <label>LAST SEEN DATE</label>
+            <label>LAST SEEN DATE<text style="color: red;">*</text></label>
               <input type="datetime-local" class="form-control" name="last_seen_date" required>
           </div>
         </div>
@@ -332,23 +328,23 @@
         <div class="panel-body">
         <div class="row form-group">
            <div class="col-lg-6">
-            <label>COMPLAINANT/INFORMANT'S NAME</label>
+            <label>COMPLAINANT/INFORMANT'S NAME<text style="color: red;">*</text></label>
               <input type="text" class="form-control" name="comp_name" placeholder="Enter your name" required>
           </div>
         </div>     
         <div class="row form-group">
            <div class="col-lg-6">
-            <label>COMPLAINANT/INFORMANT'S ADDRESS</label>
+            <label>COMPLAINANT/INFORMANT'S ADDRESS<text style="color: red;">*</text></label>
               <input type="text" class="form-control" name="comp_address" placeholder="Enter your complete address" required>
           </div>
           <div class="col-lg-6">
-            <label>PHONE NUMBER</label>
+            <label>PHONE NUMBER<text style="color: red;">*</text></label>
               <input type="text" class="form-control" name="phone" placeholder="Enter phone number" required>
           </div>  
         </div>
         <div class="row form-group">
            <div class="col-lg-6">
-            <label>RELATIONSHIP OF COMPLAINANT/INFORMANT TO THE SUBJECT</label>
+            <label>RELATIONSHIP OF COMPLAINANT/INFORMANT TO THE SUBJECT<text style="color: red;">*</text></label>
               <select class="form-control" name="relation">
               <option>Parent</option>
               <option>Guardian</option> 
