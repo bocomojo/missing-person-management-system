@@ -1,5 +1,6 @@
 <?php require_once('includes/session.php');
       require_once('includes/conn.php');
+       require_once('check.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +44,12 @@
                             View Missing Persons
                         </a>
                     </li>   
-                   
+                    <li>
+                        <a href="view_found_person.php">
+                            <i class="fa fa-table"></i>
+                            View Found Persons &nbsp;&nbsp;<?php echo $found;?>  
+                        </a>
+                    </li> 
                     <li>
                         <a href="invest.php">
                             <i class="fa fa-link"></i>
@@ -51,7 +57,7 @@
                         </a>
                     </li>
                     <?php
-                    if($_SESSION['permission']==1 or $_SESSION['permission']==2 ){
+                    if($_SESSION['permission']==1){
                         
                     
                     ?>
@@ -68,31 +74,30 @@
                            All Desk Officers
                         </a>
                     </li>
+                    <?php }?>
+                    <?php
+                    if($_SESSION['permission']==1 or  $_SESSION['permission']==2 ){
+                        
+                    
+                    ?>
                     <li>
                         <a href="v_issue.php">
                             <i class="fa fa-table"></i>
-                            Active Cases
+                            Active Cases &nbsp;&nbsp;<?php echo $active_case;?>
                         </a>
                     </li>
                     <li>
                         <a href="view_process.php">
                             <i class="fa fa-table"></i>
-                            Reports in Process
+                            Reports in Process &nbsp;&nbsp;<?php echo $reports_process;?>
                         </a>
                     </li>
                     <li>
                         <a href="requests.php">
                             <i class="fa fa-table"></i>
-                            Pending Requests
-                        </a>
-                    </li>
-                    <?php }?>
-
-                    <?php
-                    if($_SESSION['permission']==1 or $_SESSION['permission']==2 ){
-                        
-                    
-                    ?>
+                            Pending Requests &nbsp;&nbsp;<?php echo $requests;?>      </a>
+                    </li>   
+                     
                     <li>
                         <a href="rejected_request.php">
                             <i class="fa fa-table"></i>
@@ -109,13 +114,13 @@
                     <li>
                         <a href="archives.php">
                             <i class="fa fa-table"></i>
-                            Archives
+                            Archives &nbsp;&nbsp;<?php echo $archives;?>
                         </a>
                     </li>
                     <?php }?>
 
                     <?php
-                    if($_SESSION['permission']==1){
+                    if($_SESSION['permission']==1  or $_SESSION['permission']==2 ){
                     ?>
                     <li>
                         <a href="a_users.php">
@@ -135,11 +140,11 @@
                     ?>
                     <li>
                         <a href="notification.php">
-                            <i class="fa fa-gear"></i>
+                            <i class="fa fa-cog"></i>
                             Report Status
                         </a>
                     </li>
-                    <?php }?>
+                    <?php } ?>
                     <li>
                         <a href="account_settings.php">
                             <i class="fa fa-cog"></i>
@@ -214,7 +219,7 @@
                             <td><?php $date = date_create($row["last_seen_date"]); echo date_format($date, "F d, Y h:i:s A"); ?></td>
                             <td><?php echo $row['lastloc'];?></td>
                             <td>
-                  <a href="function/archive.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-primary"><span class="fa fa-download"></span> Download  Poster</a>
+                 <button class="btn btn-primary fa fa-download" onclick="printDiv('printArea')"><span class="fa fa-download"></span> Download  Poster</button>
                    || 
                   <a href="view_report_details.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-warning"><span class="fa fa-pencil"></span> View</a> 
                               </td>

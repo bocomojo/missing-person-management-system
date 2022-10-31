@@ -55,13 +55,13 @@ $(function () {
                 renderTo: 'container'
             },
             title: {
-                text: 'Missing Person Report Graph <?php echo $year ?>'
+                text: 'Missing Person Reports'
             },
             xAxis: {
-                categories: ['2019', '2020', '2021', '2022']
+                categories: ['Quarter 1', 'Quarter 2', 'Quarter 3', 'Quarter 4']
             },
             tooltip: {
-                  headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+				  headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
             pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
                 '<td style="padding:0"><b>{point.y} </b></td></tr>',
             footerFormat: '</table>',
@@ -70,7 +70,7 @@ $(function () {
             },
             labels: {
                 items: [{
-                    html: 'Total missing person',
+                    html: 'Total fruit consumption',
                     style: {
                         left: '40px',
                         top: '8px',
@@ -81,31 +81,31 @@ $(function () {
             series: [{
                 type: 'column',
                 name: 'Resident (Male)',
-                data: [<?php echo $fjan['total']?>,<?php echo $ffeb['total']?>,<?php echo $fjan['total']?>,<?php echo $fmar['total']?>]
+                data: [<?php echo $male_sept;?>,<?php echo $male_oct;?>,<?php echo $male_nov;?>,<?php echo $male_dec;?>]
             }, {
                 type: 'column',
                 name: 'Resident (Female)',
-                data: [2, 3, 5, 7]
+                data: [<?php echo $female_sept;?>,<?php echo $female_oct;?>,<?php echo $female_nov;?>,<?php echo $female_dec;?>]
             }, {
                 type: 'column',
                 name: 'Children (0-17 y/old)',
-                data: [4, 3, 3, 9]
+                data: [<?php echo $children_sept;?>,<?php echo $children_oct;?>,<?php echo $children_nov;?>,<?php echo $children_dec;?>]
             },  {
                 type: 'column',
                 name: 'Adult (18-59 y/old)',
-                data: [4, 3, 3, 9]
+                data: [<?php echo $adult_sept;?>,<?php echo $adult_oct;?>,<?php echo $adult_nov;?>,<?php echo $adult_dec;?>]
             },  {
                 type: 'column',
                 name: 'Senior Citizen (60 y/old - above)',
-                data: [4, 3, 3, 9]
+                data: [<?php echo $senior_sept;?>,<?php echo $senior_oct;?>,<?php echo $senior_nov;?>,<?php echo $senior_dec;?>]
             },{
                 type: 'spline',
                 name: 'Average',
                 data: [3, 2.67, 3, 6.33],
                 marker: {
-                    lineWidth: 2,
-                    lineColor: Highcharts.getOptions().colors[3],
-                    fillColor: 'white'
+                	lineWidth: 2,
+                	lineColor: Highcharts.getOptions().colors[3],
+                	fillColor: 'white'
                 }
             }, {
                 type: 'pie',
@@ -138,7 +138,7 @@ $(function () {
     });
     
 });
-        </script>
+		</script>
     </head>
     <body>
 
@@ -165,7 +165,12 @@ $(function () {
                             View Missing Persons
                         </a>
                     </li>   
-                   
+                    <li>
+                        <a href="view_found_person.php">
+                            <i class="fa fa-table"></i>
+                            View Found Persons &nbsp;&nbsp;<?php echo $found;?>  
+                        </a>
+                    </li>
                     <li>
                         <a href="invest.php">
                             <i class="fa fa-link"></i>
@@ -173,7 +178,7 @@ $(function () {
                         </a>
                     </li>
                     <?php
-                    if($_SESSION['permission']==1 or $_SESSION['permission']==2 ){
+                    if($_SESSION['permission']==1){
                         
                     
                     ?>
@@ -190,32 +195,31 @@ $(function () {
                            All Desk Officers
                         </a>
                     </li>
+                    <?php }?>
+                    <?php
+                    if($_SESSION['permission']==1 or  $_SESSION['permission']==2 ){
+                       
+                    
+                    ?>
                     <li>
                         <a href="v_issue.php">
                             <i class="fa fa-table"></i>
-                            Active Cases
+                            Active Cases &nbsp;&nbsp;<?php echo $active_case;?>
                         </a>
                     </li>
                     <li>
                         <a href="view_process.php">
                             <i class="fa fa-table"></i>
-                            Reports in Process
+                            Reports in Process &nbsp;&nbsp;<?php echo $reports_process;?>
                         </a>
                     </li>
                     <li>
                         <a href="requests.php">
                             <i class="fa fa-table"></i>
-                            Pending Requests
+                            Pending Requests &nbsp;&nbsp;<?php echo $requests;?>
                         </a>
-                    </li>
-
-                    <?php }?>
-
-                    <?php
-                    if($_SESSION['permission']==1 or $_SESSION['permission']==2 ){
-                        
-                    
-                    ?>
+                    </li> 
+                     
                     <li>
                         <a href="rejected_request.php">
                             <i class="fa fa-table"></i>
@@ -227,12 +231,12 @@ $(function () {
                     <?php
                     if($_SESSION['permission']==1 or $_SESSION['permission']==2 ){
                         
-                    
+                        
                     ?>
                     <li>
                         <a href="archives.php">
                             <i class="fa fa-table"></i>
-                            Archives
+                            Archives &nbsp;&nbsp;<?php echo $archives;?>
                         </a>
                     </li>
                     <?php }?>
@@ -327,7 +331,7 @@ $(function () {
                                     <i class="fa fa-link fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge"><?php echo $reports;?></div>
+                                    <div class="huge"><?php echo $active_case;?></div>
                                     <div>Total Number Of Active Cases</div>
                                 </div>
                             </div>
@@ -344,7 +348,7 @@ $(function () {
                                     <i class="fa fa-user fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge"><?php echo $reports;?></div>
+                                    <div class="huge"><?php echo $requests;?></div>
                                     <div>Total Number Of Pending Request</div>
                                 </div>
                             </div>
@@ -371,8 +375,27 @@ $(function () {
             <div class="line"></div>
 <!-- Start of Report Graph -->
         <div class="row">
-        <script src="../Highcharts-2.3.5/js/highcharts.js"></script>
-        <script src="../Highcharts-2.3.5/js/exporting.js"></script>
+        <!-- <script src="../Highcharts-2.3.5/js/highcharts.js"></script>
+        <script src="../Highcharts-2.3.5/js/exporting.js"></script> -->
+        <script src="http://code.highcharts.com/highcharts.js"></script>
+        <script src="http://code.highcharts.com/modules/exporting.js"></script>
+        <!-- <center>
+        <select id="ddlYears"></select><br><br>
+        </center> -->
+        <center>
+        <?php 
+    $year_start  = 2000;
+    $year_end = date('Y'); // current Year
+    $user_selected_year = $year_end; // user date of birth year
+
+    echo '<select id="year" name="year">'."\n";
+    for ($i_year = $year_start; $i_year <= $year_end; $i_year++) {
+        $selected = ($user_selected_year == $i_year ? ' selected' : '');
+        echo '<option value="'.$i_year.'"'.$selected.'>'.$i_year.'</option>'."\n";
+    }
+    echo '</select>'."\n";
+        ?><br><br>
+        </center>
         <div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
         </div>
 <!-- End of Report Graph -->               
@@ -406,5 +429,23 @@ $(function () {
                  $('makota').addClass('animated tada');
              });
          </script>
+<!-- dropdown year
+         <script type="text/javascript">
+    window.onload = function () {
+        //Reference the DropDownList.
+        var ddlYears = document.getElementById("ddlYears");
+ 
+        //Determine the Current Year.
+        var currentYear = (new Date()).getFullYear();
+ 
+        //Loop and add the Year values to DropDownList.
+        for (var i = currentYear; i >= 1950; i--) {
+            var option = document.createElement("OPTION");
+            option.innerHTML = i;
+            option.value = i;
+            ddlYears.appendChild(option);
+        }
+    };
+</script> -->
     </body>
 </html>

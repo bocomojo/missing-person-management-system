@@ -1,5 +1,6 @@
 <?php require_once('includes/session.php');
       require_once('includes/conn.php');
+       require_once('check.php');
     //   header('Content-disposition: attachment; filename=registerationform.pdf');
     //   header('Content-type: application/pdf');
     //   readfile('registerationform.pdf');

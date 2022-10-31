@@ -1,5 +1,6 @@
 <?php require_once('includes/session.php');
       require_once('includes/conn.php');
+       require_once('check.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,6 +44,12 @@
                             View Missing Persons
                         </a>
                     </li>   
+                    <li>
+                        <a href="view_found_person.php">
+                            <i class="fa fa-table"></i>
+                            View Found Persons &nbsp;&nbsp;<?php echo $found;?>  
+                        </a>
+                    </li>   
                    
                     <li>
                         <a href="invest.php">
@@ -51,7 +58,7 @@
                         </a>
                     </li>
                     <?php
-                    if($_SESSION['permission']==1 or $_SESSION['permission']==2 ){
+                    if($_SESSION['permission']==1){
                         
                     
                     ?>
@@ -68,25 +75,25 @@
                            All Desk Officers
                         </a>
                     </li>
+                    <?php }?>
                     <li>
                         <a href="v_issue.php">
                             <i class="fa fa-table"></i>
-                            Active Cases
+                            Active Cases &nbsp;&nbsp;<?php echo $active_case;?>
                         </a>
                     </li>
                     <li>
                         <a href="view_process.php">
                             <i class="fa fa-table"></i>
-                            Reports in Process
+                            Reports in Process &nbsp;&nbsp;<?php echo $reports_process;?>
                         </a>
                     </li>
                     <li class="active">
                         <a href="requests.php">
                             <i class="fa fa-table"></i>
-                            Pending Requests
-                        </a>
-                    </li>
-                    <?php }?>
+                            Pending Requests &nbsp;&nbsp;<?php echo $requests;?>      </a>
+                    </li>   
+                     
 
                     <?php
                     if($_SESSION['permission']==1 or $_SESSION['permission']==2 ){
@@ -109,13 +116,13 @@
                     <li>
                         <a href="archives.php">
                             <i class="fa fa-table"></i>
-                            Archives
+                            Archives &nbsp;&nbsp;<?php echo $archives;?>
                         </a>
                     </li>
                     <?php }?>
 
                     <?php
-                    if($_SESSION['permission']==1){
+                    if($_SESSION['permission']==1  or $_SESSION['permission']==2 ){
                     ?>
                     <li>
                         <a href="a_users.php">
@@ -127,6 +134,16 @@
                         <a href="v_users.php">
                             <i class="fa fa-table"></i>
                             View Users
+                        </a>
+                    </li>
+                    <?php } ?>
+                    <?php
+                    if($_SESSION['permission']==3){
+                    ?>
+                    <li>
+                        <a href="notification.php">
+                            <i class="fa fa-cog"></i>
+                            Report Status
                         </a>
                     </li>
                     <?php } ?>

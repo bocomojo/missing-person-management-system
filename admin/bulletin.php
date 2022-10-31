@@ -1,6 +1,7 @@
 <?php require_once('includes/session.php');
        require_once('includes/conn.php');
        require_once('check.php');
+       require_once('check.php');
        $year = date("Y", strtotime("+8 HOURS"));
        $conn = new mysqli("localhost", "root", "", "caaz") or die(mysqli_error());
        $qjan = $conn->query("SELECT COUNT(*) as total FROM `reports` WHERE 'Jan' && `filed_date`") or die(mysqli_error());
@@ -194,21 +195,21 @@ $(function () {
                     <li>
                         <a href="v_issue.php">
                             <i class="fa fa-table"></i>
-                            Active Cases
+                            Active Cases &nbsp;&nbsp;<?php echo $active_case;?>
                         </a>
                     </li>
                     <li>
                         <a href="view_process.php">
                             <i class="fa fa-table"></i>
-                            Reports in Process
+                            Reports in Process &nbsp;&nbsp;<?php echo $reports_process;?>
                         </a>
                     </li>
                     <li>
                         <a href="requests.php">
                             <i class="fa fa-table"></i>
-                            Pending Requests
-                        </a>
-                    </li>
+                            Pending Requests &nbsp;&nbsp;<?php echo $requests;?>      </a>
+                    </li>   
+                     
 
                     <?php }?>
 
@@ -233,7 +234,7 @@ $(function () {
                     <li>
                         <a href="archives.php">
                             <i class="fa fa-table"></i>
-                            Archives
+                            Archives &nbsp;&nbsp;<?php echo $archives;?>
                         </a>
                     </li>
                     <?php }?>

@@ -1,5 +1,6 @@
 <?php require_once('includes/session.php');
       require_once('includes/conn.php');
+       require_once('check.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,7 +70,7 @@
                     <li>
                         <a href="v_issue.php">
                             <i class="fa fa-table"></i>
-                            Active Cases
+                            Active Cases &nbsp;&nbsp;<?php echo $active_case;?>
                         </a>
                     </li>
                     <li>
@@ -101,7 +102,7 @@
                     <li>
                         <a href="archives.php">
                             <i class="fa fa-table"></i>
-                            Archives
+                            Archives &nbsp;&nbsp;<?php echo $archives;?>
                         </a>
                     </li>
                     <?php }?>

@@ -1,5 +1,6 @@
 <?php require_once('includes/session.php');
       require_once('includes/conn.php');
+       require_once('check.php');
       date_default_timezone_set('Asia/Manila');
 ?>
 <!DOCTYPE html>
@@ -41,7 +42,7 @@
                     <li>
                         <a href="view_missing_person.php">
                             <i class="fa fa-table"></i>
-                            Active Cases
+                            View Missing Person
                         </a>
                     </li>   
                    
@@ -78,15 +79,15 @@
                     <li>
                         <a href="view_process.php">
                             <i class="fa fa-table"></i>
-                            Reports in Process
+                            Reports in Process &nbsp;&nbsp;<?php echo $reports_process;?>
                         </a>
                     </li>
                     <li>
                         <a href="requests.php">
                             <i class="fa fa-table"></i>
-                            Pending Requests
-                        </a>
-                    </li>
+                            Pending Requests &nbsp;&nbsp;<?php echo $requests;?>      </a>
+                    </li>   
+                     
 
                     <?php }?>
 
@@ -111,7 +112,7 @@
                     <li>
                         <a href="archives.php">
                             <i class="fa fa-table"></i>
-                            Archives
+                            Archives &nbsp;&nbsp;<?php echo $archives;?>
                         </a>
                     </li>
                     <?php }?>
@@ -138,7 +139,7 @@
                     <li>
                         <a href="notification.php">
                             <i class="fa fa-cog"></i>
-                            Notifications
+                            Report Status
                         </a>
                     </li>
                     <?php } ?>
@@ -300,6 +301,25 @@
                 </p>
             </td>
         </tr>
+        <?php
+                    if($_SESSION['permission']==3 ){
+                        
+                    
+                    ?>
+        <tr>
+            <td width="783" colspan="5" valign="top">
+                <p>
+                    <div class="fhead">&nbsp;10 PLEASE CONTACT THIS NUMBER IF FOUND</div><br>
+                    &nbsp;&nbsp;<?php echo "09123896970";?></div>
+                </p>
+            </td>
+        </tr>
+        <?php }?>
+        <?php
+                    if($_SESSION['permission']==1 or $_SESSION['permission']==2 ){
+                        
+                    
+                    ?>
         <tr>
             <td width="783" colspan="5" valign="top">
                 <p>
@@ -607,6 +627,7 @@
             <td width="246">
             </td>
         </tr>
+        <?php }?>
     </tbody>
 </table>
 

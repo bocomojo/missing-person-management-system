@@ -1,5 +1,6 @@
 <?php require_once('includes/session.php');
       require_once('includes/conn.php');
+       require_once('check.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +32,7 @@
                 </div>
 
                 <ul class="list-unstyled components">
-                <li>
+                    <li>
                         <a href="dashboard.php">
                             <i class="fa fa-th"></i>
                            Dashboard
@@ -43,6 +44,12 @@
                             View Missing Persons
                         </a>
                     </li>   
+                    <li>
+                        <a href="view_found_person.php">
+                            <i class="fa fa-table"></i>
+                            View Found Persons &nbsp;&nbsp;<?php echo $found;?>  
+                        </a>
+                    </li>   
                    
                     <li>
                         <a href="invest.php">
@@ -51,7 +58,7 @@
                         </a>
                     </li>
                     <?php
-                    if($_SESSION['permission']==1 or $_SESSION['permission']==2 ){
+                    if($_SESSION['permission']==1){
                         
                     
                     ?>
@@ -68,32 +75,33 @@
                            All Desk Officers
                         </a>
                     </li>
+                    <?php }?>
                     <li>
                         <a href="v_issue.php">
                             <i class="fa fa-table"></i>
-                            Active Cases
+                            Active Cases &nbsp;&nbsp;<?php echo $active_case;?>
                         </a>
                     </li>
                     <li>
                         <a href="view_process.php">
                             <i class="fa fa-table"></i>
-                            Reports in Process
+                            Reports in Process &nbsp;&nbsp;<?php echo $reports_process;?>
                         </a>
                     </li>
                     <li>
                         <a href="requests.php">
                             <i class="fa fa-table"></i>
-                            Pending Requests
+                            Pending Requests &nbsp;&nbsp;<?php echo $requests;?>
                         </a>
-                    </li>
-                    <?php }?>
+                    </li>   
+                     
 
                     <?php
                     if($_SESSION['permission']==1 or $_SESSION['permission']==2 ){
                         
                     
                     ?>
-                    <li class="active">
+                    <li>
                         <a href="rejected_request.php">
                             <i class="fa fa-table"></i>
                             Rejected Reports
@@ -109,13 +117,13 @@
                     <li>
                         <a href="archives.php">
                             <i class="fa fa-table"></i>
-                            Archives
+                            Archives &nbsp;&nbsp;<?php echo $archives;?>
                         </a>
                     </li>
                     <?php }?>
 
                     <?php
-                    if($_SESSION['permission']==1){
+                    if($_SESSION['permission']==1  or $_SESSION['permission']==2 ){
                     ?>
                     <li>
                         <a href="a_users.php">
@@ -127,6 +135,16 @@
                         <a href="v_users.php">
                             <i class="fa fa-table"></i>
                             View Users
+                        </a>
+                    </li>
+                    <?php } ?>
+                    <?php
+                    if($_SESSION['permission']==3){
+                    ?>
+                    <li>
+                        <a href="notification.php">
+                            <i class="fa fa-cog"></i>
+                            Report Status
                         </a>
                     </li>
                     <?php } ?>
@@ -180,6 +198,7 @@
                     <th>Subject Name</th>
                     <th>Gender</th>
                     <th>Address</th>
+                    <th>Status</th>
                     <th>Action</th> 
 
                     
@@ -199,11 +218,28 @@
                             <td><?php echo $row['fullname'];?></td>
                             <td><?php echo $row['gender'];?></td>  
                             <td><?php echo $row['address'];?></td>
+                            <td><?php if ($row['status']==0) {
+                                echo 'Pending';
+                            } else if ($row['status']==1) {
+                                echo 'Accepted';
+                            } else if ($row['status']==2) {
+                                echo 'Requesting issuance of alarm';
+                            } else if ($row['status']==3) {
+                                echo 'Alarm has been issued';
+                            } else if ($row['status']==4) {
+                                echo 'Requesting lift of alarm';
+                            } else if ($row['status']==5) {
+                                echo 'Alarm has been lifted';
+                            } else if ($row['status']==6) {
+                                echo 'Found';
+                            } else if ($row['status']==7) {
+                                echo 'Rejected';
+                            }?></td>
 
                             <td>
                   <a href="v_issue.php?edited=1&idx=<?php echo $row['id']; ?>" data-toggle="modal" class="btn btn-danger"><span class="fa fa-times"></span> Remove</a>
                    || 
-                  <a href="#samstrover<?php echo $row['fullname']; ?>" data-toggle="modal" class="btn btn-warning"><span class="fa fa-pencil"></span> View</a> 
+                  <a href="view_report_details.php?id=<?php echo $row['id']; ?>" data-toggle="modal" class="btn btn-warning"><span class="fa fa-pencil"></span> View</a> 
                               </td>
                           </tr>
                           <?php

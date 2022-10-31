@@ -1,5 +1,6 @@
 <?php require_once('includes/session.php');
       require_once('includes/conn.php');
+       require_once('check.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,9 +84,9 @@
                     <li>
                         <a href="requests.php">
                             <i class="fa fa-table"></i>
-                            Pending Requests
-                        </a>
-                    </li>
+                            Pending Requests &nbsp;&nbsp;<?php echo $requests;?>      </a>
+                    </li>   
+                     
 
                     <?php }?>
 
@@ -110,7 +111,7 @@
                     <li>
                         <a href="archives.php">
                             <i class="fa fa-table"></i>
-                            Archives
+                            Archives &nbsp;&nbsp;<?php echo $archives;?>
                         </a>
                     </li>
                     <?php }?>
