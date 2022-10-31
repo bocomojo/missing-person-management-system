@@ -388,7 +388,7 @@ $(function () {
     $year_end = date('Y'); // current Year
     $user_selected_year = $year_end; // user date of birth year
 
-    echo '<select id="year" name="year">'."\n";
+    echo '<select id="year_dropdown" name="year_dropdown">'."\n";
     for ($i_year = $year_start; $i_year <= $year_end; $i_year++) {
         $selected = ($user_selected_year == $i_year ? ' selected' : '');
         echo '<option value="'.$i_year.'"'.$selected.'>'.$i_year.'</option>'."\n";
@@ -428,6 +428,15 @@ $(function () {
              $('sams').on('click', function(){
                  $('makota').addClass('animated tada');
              });
+
+
+
+             $(document).ready(function () {
+                $('#year_dropdown').on('click', function () {
+                    var test = $( "#year_dropdown option:selected" ).text();
+                    // console.log('test', test)
+                })
+             })
          </script>
 <!-- dropdown year
          <script type="text/javascript">
