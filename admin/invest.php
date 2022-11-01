@@ -246,6 +246,21 @@
         </div>
         <div class="row form-group">
           <div class="col-lg-6">
+            <label>COMPLEXION</text></label>
+              <input type="text" class="form-control" name="complexion" placeholder="Enter skin color" required>
+          </div>   
+          <div class="col-lg-6">
+            <label>BUILD</text></label>
+              <select class="form-control" name="build">
+              <option>Unknown</option>
+              <option>Ectomorph(thin)</option>
+              <option>Mesomorph(normal)</option>
+              <option>Endormorph(large)</option>         
+              </select>
+          </div>  
+        </div>
+        <div class="row form-group">
+          <div class="col-lg-6">
             <label>CURRENT HAIR COLOR</label>
               <input type="text" class="form-control" name="haircolor" placeholder="Enter current hair color">
           </div>   
@@ -293,8 +308,8 @@
         </div>
         <div class="row form-group">
           <div class="col-lg-6">
-            <label>ACCESSORIES/JEWELRY (IF ANY)</label>
-              <input type="text" class="form-control" name="accessory" placeholder="Enter last worn accessory eg. earrings, necklace, etc.">
+            <label>PECULIARITY</label>
+              <input type="text" class="form-control" name="peculiarity" placeholder="Enter his/her personality">
           </div>
           <div class="col-lg-6">
             <label>PROSTHETICS & IMPLANTS (IF ANY)</label>

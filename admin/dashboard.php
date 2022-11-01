@@ -55,10 +55,10 @@ $(function () {
                 renderTo: 'container'
             },
             title: {
-                text: 'Missing Person Reports'
+                text: 'Missing Person Reports 2022'
             },
             xAxis: {
-                categories: ['Quarter 1', 'Quarter 2', 'Quarter 3', 'Quarter 4']
+                categories: ['January-March', 'April-June', 'July-September', 'October-December']
             },
             tooltip: {
 				  headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
@@ -101,7 +101,11 @@ $(function () {
             },{
                 type: 'spline',
                 name: 'Average',
-                data: [3, 2.67, 3, 6.33],
+                data: [
+                    <?php echo $q_one = ($male_sept + $female_sept + $children_sept + $adult_sept + $senior_sept)/(5);?>, 
+                    <?php echo $q_one = ($male_oct + $female_oct + $children_oct + $adult_oct + $senior_oct)/(5);?>, 
+                    <?php echo $q_one = ($male_nov + $female_nov + $children_nov + $adult_nov + $senior_nov)/(5);?>, 
+                    <?php echo $q_one = ($male_dec + $female_dec + $children_dec + $adult_dec + $senior_dec)/(5);?>],
                 marker: {
                 	lineWidth: 2,
                 	lineColor: Highcharts.getOptions().colors[3],
@@ -109,23 +113,23 @@ $(function () {
                 }
             }, {
                 type: 'pie',
-                name: 'Total Evacuee',
+                name: 'Total Missing Reports',
                 data: [{
-                    name: 'flood',
-                    y: 13,
-                    color: '#ff0000' // Jane's color
+                    name: 'January-March',
+                    y: <?php echo $report_sept;?>,
+                    color: 'red' // Jane's color
                 }, {
-                    name: 'wind storm/ storm surge',
-                    y: 23,
-                    color: '#00ff00' // John's color
+                    name: 'April-June',
+                    y: <?php echo $report_oct;?>,
+                    color: 'green' // John's color
                 }, {
-                    name: 'mudflow/ lahar',
-                    y: 23,
-                    color: '#0000ff' // John's color
+                    name: 'July-September',
+                    y: <?php echo $report_nov;?>,
+                    color: 'blue' // John's color
                 }, {
-                    name: 'landslide',
-                    y: 19,
-                    color: '#000000' // Joe's color
+                    name: 'October-December',
+                    y: <?php echo $report_dec;?>,
+                    color: 'yellow' // Joe's color
                 }],
                 center: [100, 80],
                 size: 100,
@@ -195,7 +199,7 @@ $(function () {
                            All Desk Officers
                         </a>
                     </li>
-                    <?php }?> --> -->
+                    <?php }?> --> 
                     <?php
                     if($_SESSION['permission']==1 or  $_SESSION['permission']==2 ){
                        
@@ -382,7 +386,7 @@ $(function () {
         <!-- <center>
         <select id="ddlYears"></select><br><br>
         </center> -->
-        <center>
+        <!-- <center>
         <?php 
     $year_start  = 2000;
     $year_end = date('Y'); // current Year
@@ -395,7 +399,7 @@ $(function () {
     }
     echo '</select>'."\n";
         ?><br><br>
-        </center>
+        </center> -->
         <div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
         </div>
 <!-- End of Report Graph -->               

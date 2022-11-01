@@ -86,19 +86,19 @@ $sql_dec_children ="SELECT count(id) As total_dec_children FROM reports WHERE ag
     $children_dec=$values['total_dec_children'];
 
     //adult (18-59 y/old)
-$sql_sept_adult ="SELECT count(id) As total_sept_adult FROM reports WHERE age BETWEEN 60 AND 200 AND QUARTER(alarm_issue_date)=1 AND status=3 OR status=4 OR status=5";
+$sql_sept_adult ="SELECT count(id) As total_sept_adult FROM reports WHERE age BETWEEN 18 AND 59 AND QUARTER(alarm_issue_date)=1 AND status=3 OR status=4 OR status=5";
     $result_sept_adult=mysqli_query($mysqli,$sql_sept_adult);
     $values=mysqli_fetch_assoc($result_sept_adult);
     $adult_sept=$values['total_sept_adult'];
-$sql_oct_adult ="SELECT count(id) As total_oct_adult FROM reports WHERE age BETWEEN 60 AND 200 AND QUARTER(alarm_issue_date)=2 AND status=3 OR status=4 OR status=5";
+$sql_oct_adult ="SELECT count(id) As total_oct_adult FROM reports WHERE age BETWEEN 18 AND 59 AND QUARTER(alarm_issue_date)=2 AND status=3 OR status=4 OR status=5";
     $result_oct_adult=mysqli_query($mysqli,$sql_oct_adult);
     $values=mysqli_fetch_assoc($result_oct_adult);
     $adult_oct=$values['total_oct_adult'];
-$sql_nov_adult ="SELECT count(id) As total_nov_adult FROM reports WHERE age BETWEEN 60 AND 200 AND QUARTER(alarm_issue_date)=3 AND status=3 OR status=4 OR status=5";
+$sql_nov_adult ="SELECT count(id) As total_nov_adult FROM reports WHERE age BETWEEN 18 AND 59 AND QUARTER(alarm_issue_date)=3 AND status=3 OR status=4 OR status=5";
     $result_nov_adult=mysqli_query($mysqli,$sql_nov_adult);
     $values=mysqli_fetch_assoc($result_nov_adult);
     $adult_nov=$values['total_nov_adult'];
-$sql_dec_adult ="SELECT count(id) As total_dec_adult FROM reports WHERE age BETWEEN 60 AND 200 AND QUARTER(alarm_issue_date)=4 AND status=3 OR status=4 OR status=5";
+$sql_dec_adult ="SELECT count(id) As total_dec_adult FROM reports WHERE age BETWEEN 18 AND 59 AND QUARTER(alarm_issue_date)=4 AND status=3 OR status=4 OR status=5";
     $result_dec_adult=mysqli_query($mysqli,$sql_dec_adult);
     $values=mysqli_fetch_assoc($result_dec_adult);
     $adult_dec=$values['total_dec_adult'];
@@ -108,16 +108,34 @@ $sql_sept_senior ="SELECT count(id) As total_sept_senior FROM reports WHERE age 
     $result_sept_senior=mysqli_query($mysqli,$sql_sept_senior);
     $values=mysqli_fetch_assoc($result_sept_senior);
     $senior_sept=$values['total_sept_senior'];
-$sql_oct_senior ="SELECT count(id) As total_oct_senior FROM reports WHERE age BETWEEN 0 AND 17 AND QUARTER(alarm_issue_date)=2 AND status=3 OR status=4 OR status=5";
+$sql_oct_senior ="SELECT count(id) As total_oct_senior FROM reports WHERE age BETWEEN 60 AND 200 AND QUARTER(alarm_issue_date)=2 AND status=3 OR status=4 OR status=5";
     $result_oct_senior=mysqli_query($mysqli,$sql_oct_senior);
     $values=mysqli_fetch_assoc($result_oct_senior);
     $senior_oct=$values['total_oct_senior'];
-$sql_nov_senior ="SELECT count(id) As total_nov_senior FROM reports WHERE age BETWEEN 0 AND 17 AND QUARTER(alarm_issue_date)=3 AND status=3 OR status=4 OR status=5";
+$sql_nov_senior ="SELECT count(id) As total_nov_senior FROM reports WHERE age BETWEEN 60 AND 200 AND QUARTER(alarm_issue_date)=3 AND status=3 OR status=4 OR status=5";
     $result_nov_senior=mysqli_query($mysqli,$sql_nov_senior);
     $values=mysqli_fetch_assoc($result_nov_senior);
     $senior_nov=$values['total_nov_senior'];
-$sql_dec_senior ="SELECT count(id) As total_dec_senior FROM reports WHERE age BETWEEN 0 AND 17 AND QUARTER(alarm_issue_date)=4 AND status=3 OR status=4 OR status=5";
+$sql_dec_senior ="SELECT count(id) As total_dec_senior FROM reports WHERE age BETWEEN 60 AND 200 AND QUARTER(alarm_issue_date)=4 AND status=3 OR status=4 OR status=5";
     $result_dec_senior=mysqli_query($mysqli,$sql_dec_senior);
     $values=mysqli_fetch_assoc($result_dec_senior);
     $senior_dec=$values['total_dec_senior'];
+
+    //total missing reports per quarter
+$sql_sept_report ="SELECT count(id) As total_sept_report FROM reports WHERE QUARTER(alarm_issue_date)=1 AND status=3 OR status=4 OR status=5";
+    $result_sept_report=mysqli_query($mysqli,$sql_sept_report);
+    $values=mysqli_fetch_assoc($result_sept_report);
+    $report_sept=$values['total_sept_report'];
+$sql_oct_report ="SELECT count(id) As total_oct_report FROM reports WHERE QUARTER(alarm_issue_date)=2 AND status=3 OR status=4 OR status=5";
+    $result_oct_report=mysqli_query($mysqli,$sql_oct_report);
+    $values=mysqli_fetch_assoc($result_oct_report);
+    $report_oct=$values['total_oct_report'];
+$sql_nov_report ="SELECT count(id) As total_nov_report FROM reports WHERE QUARTER(alarm_issue_date)=3 AND status=3 OR status=4 OR status=5";
+    $result_nov_report=mysqli_query($mysqli,$sql_nov_report);
+    $values=mysqli_fetch_assoc($result_nov_report);
+    $report_nov=$values['total_nov_report'];
+$sql_dec_report ="SELECT count(id) As total_dec_report FROM reports WHERE QUARTER(alarm_issue_date)=4 AND status=3 OR status=4 OR status=5";
+    $result_dec_report=mysqli_query($mysqli,$sql_dec_report);
+    $values=mysqli_fetch_assoc($result_dec_report);
+    $report_dec=$values['total_dec_report'];
 ?>
