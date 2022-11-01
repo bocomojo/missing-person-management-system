@@ -56,7 +56,7 @@
                             Report Missing Person
                         </a>
                     </li>
-                    <?php
+                     <!-- <?php
                     if($_SESSION['permission']==1){
                         
                     
@@ -74,7 +74,7 @@
                            All Desk Officers
                         </a>
                     </li>
-                    <?php }?>
+                    <?php }?> -->
                     <?php
                     if($_SESSION['permission']==1 or  $_SESSION['permission']==2 ){
                         
@@ -219,8 +219,8 @@
                             <td><?php $date = date_create($row["last_seen_date"]); echo date_format($date, "F d, Y h:i:s A"); ?></td>
                             <td><?php echo $row['lastloc'];?></td>
                             <td>
-                 <button class="btn btn-primary fa fa-download" onclick="printDiv('printArea')"><span class="fa fa-download"></span> Download  Poster</button>
-                   || 
+                 <!-- <button class="btn btn-primary fa fa-download" onclick="printDiv('printArea')"><span class="fa fa-download"></span> Download  Poster</button>
+                   ||  -->
                   <a href="view_report_details.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-warning"><span class="fa fa-pencil"></span> View</a> 
                               </td>
                           </tr>

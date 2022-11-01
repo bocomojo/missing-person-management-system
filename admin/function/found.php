@@ -1,29 +1,22 @@
 <?php
 
 require_once('../includes/conn.php');
-session_start();
-$username = $_SESSION['name'] . " ". $_SESSION['surname'];
-
-date_default_timezone_set('Asia/Manila');
-$dateToday = date("F d, Y h:i:s A");
-$positionArray = ['','Admin', 'Desk officer', 'User'];
-$position = $positionArray[$_SESSION['permission']];
 
 if (isset($_GET['id'])) {
 
 $id = $_GET['id'];
 
-$sql="UPDATE reports SET status = '1', accepted_by = '$username', accepted_date = '$dateToday', position = '$position' WHERE id=$id";
-// $sqli="UPDATE notification SET status = '1' WHERE request_id=$id";
+$sql="UPDATE reports SET status = '5' WHERE id=$id";
+// $sqli="UPDATE notification SET status = '2' WHERE request_id=$id";
 
     if ($mysqli->query($sql) === true) 
 { 
 
-    echo "<script>alert('Action Accepted!'); window.location='../v_issue.php'</script>"; 
+    echo "<script>alert('Action Successful!!!'); window.location='../v_issue.php'</script>"; 
 } 
 else
 { 
-    echo "<script>alert('Error Occured!!');";
+    echo "<script>alert('Error Occured!!!'); window.location='../v_issue.php'</script>";
         $mysqli->error; 
 } 
   

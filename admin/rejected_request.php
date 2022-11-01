@@ -57,7 +57,7 @@
                             Report Missing Person
                         </a>
                     </li>
-                    <?php
+                     <!-- <?php
                     if($_SESSION['permission']==1){
                         
                     
@@ -75,7 +75,7 @@
                            All Desk Officers
                         </a>
                     </li>
-                    <?php }?>
+                    <?php }?> -->
                     <li>
                         <a href="v_issue.php">
                             <i class="fa fa-table"></i>
@@ -101,7 +101,7 @@
                         
                     
                     ?>
-                    <li>
+                    <li class="active">
                         <a href="rejected_request.php">
                             <i class="fa fa-table"></i>
                             Rejected Reports
@@ -239,7 +239,7 @@
                             <td>
                   <a href="v_issue.php?edited=1&idx=<?php echo $row['id']; ?>" data-toggle="modal" class="btn btn-danger"><span class="fa fa-times"></span> Remove</a>
                    || 
-                  <a href="view_report_details.php?id=<?php echo $row['id']; ?>" data-toggle="modal" class="btn btn-warning"><span class="fa fa-pencil"></span> View</a> 
+                  <a href="rejected_requests.php?id=<?php echo $row['id']; ?>" data-toggle="modal" class="btn btn-warning"><span class="fa fa-pencil"></span> View</a> 
                               </td>
                           </tr>
                           <?php

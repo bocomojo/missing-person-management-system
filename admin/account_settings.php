@@ -58,7 +58,7 @@ $eprow=mysqli_fetch_array($sqlE);
                             Report Missing Person
                         </a>
                     </li>
-                    <?php
+                     <!-- <?php
                     if($_SESSION['permission']==1){
                         
                     
@@ -76,7 +76,7 @@ $eprow=mysqli_fetch_array($sqlE);
                            All Desk Officers
                         </a>
                     </li>
-                    <?php }?>
+                    <?php }?> -->
                     <?php
                     if($_SESSION['permission']==1 or  $_SESSION['permission']==2 ){
                         

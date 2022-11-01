@@ -56,7 +56,7 @@
                             Report Missing Person
                         </a>
                     </li>
-                    <?php
+                     <!-- <?php
                     if($_SESSION['permission']==1){
                         
                     
@@ -74,7 +74,7 @@
                            All Desk Officers
                         </a>
                     </li>
-                    <?php }?>
+                    <?php }?> -->
                     <li>
                         <a href="v_issue.php">
                             <i class="fa fa-table"></i>

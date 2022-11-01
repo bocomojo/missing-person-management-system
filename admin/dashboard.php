@@ -177,7 +177,7 @@ $(function () {
                             Report Missing Person
                         </a>
                     </li>
-                    <?php
+                    <!--  <!-- <?php
                     if($_SESSION['permission']==1){
                         
                     
@@ -195,7 +195,7 @@ $(function () {
                            All Desk Officers
                         </a>
                     </li>
-                    <?php }?>
+                    <?php }?> --> -->
                     <?php
                     if($_SESSION['permission']==1 or  $_SESSION['permission']==2 ){
                        

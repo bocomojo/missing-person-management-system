@@ -42,7 +42,13 @@
                     <li>
                         <a href="view_missing_person.php">
                             <i class="fa fa-table"></i>
-                            View Missing Person
+                            View Missing Persons
+                        </a>
+                    </li>   
+                    <li>
+                        <a href="view_found_person.php">
+                            <i class="fa fa-table"></i>
+                            View Found Persons &nbsp;&nbsp;<?php echo $found;?>  
                         </a>
                     </li>   
                    
@@ -52,8 +58,8 @@
                             Report Missing Person
                         </a>
                     </li>
-                    <?php
-                    if($_SESSION['permission']==1 or $_SESSION['permission']==2 ){
+                     <!-- <?php
+                    if($_SESSION['permission']==1){
                         
                     
                     ?>
@@ -70,10 +76,11 @@
                            All Desk Officers
                         </a>
                     </li>
-                    <li class="active">
+                    <?php }?> -->
+                    <li>
                         <a href="v_issue.php">
                             <i class="fa fa-table"></i>
-                            View Active Cases
+                            Active Cases &nbsp;&nbsp;<?php echo $active_case;?>
                         </a>
                     </li>
                     <li>
@@ -88,8 +95,6 @@
                             Pending Requests &nbsp;&nbsp;<?php echo $requests;?>      </a>
                     </li>   
                      
-
-                    <?php }?>
 
                     <?php
                     if($_SESSION['permission']==1 or $_SESSION['permission']==2 ){
