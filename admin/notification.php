@@ -1,6 +1,5 @@
 <?php require_once('includes/session.php');
       require_once('includes/conn.php');
-       require_once('check.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +46,7 @@
                     <li>
                         <a href="view_found_person.php">
                             <i class="fa fa-table"></i>
-                            View Found Persons &nbsp;&nbsp;<?php echo $found;?>  
+                            View Found Persons
                         </a>
                     </li>       
                    
@@ -84,15 +83,15 @@
                     <li>
                         <a href="view_process.php">
                             <i class="fa fa-table"></i>
-                            Reports in Process &nbsp;&nbsp;<?php echo $reports_process;?>
+                            Reports in Process
                         </a>
                     </li>
                     <li>
                         <a href="requests.php">
                             <i class="fa fa-table"></i>
-                            Pending Requests &nbsp;&nbsp;<?php echo $requests;?>      </a>
-                    </li>   
-                     
+                            Pending Requests
+                        </a>
+                    </li>
                     <?php }?>
 
                     <?php
@@ -116,7 +115,7 @@
                     <li>
                         <a href="archives.php">
                             <i class="fa fa-table"></i>
-                            Archives &nbsp;&nbsp;<?php echo $archives;?>
+                            Archives
                         </a>
                     </li>
                     <?php }?>
@@ -138,7 +137,7 @@
                     </li>
                     <?php } ?>
                     <li class="active">
-                        <a href="notification.php">
+                        <a href="status.php">
                             <i class="fa fa-gear"></i>
                             Report Status
                         </a>
@@ -199,7 +198,7 @@
                     <?php
                         $a=1;
                         $username = $_SESSION['username'];
-                    $query=mysqli_query($mysqli,"select * from `reports` where username='$username'");
+                    $query=mysqli_query($mysqli,"select * from `reports` where username = '$username'");
                      while($row=mysqli_fetch_array($query))
                         {
                         

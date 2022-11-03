@@ -136,7 +136,7 @@
                     if($_SESSION['permission']==3){
                     ?>
                     <li>
-                        <a href="notification.php">
+                        <a href="status.php">
                             <i class="fa fa-cog"></i>
                             Notifications
                         </a>

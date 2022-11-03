@@ -139,8 +139,8 @@
                     if($_SESSION['permission']==3){
                     ?>
                     <li>
-                        <a href="notification.php">
-                            <i class="fa fa-bell"></i>
+                        <a href="status.php">
+                            <i class="fa fa-question"></i>
                             Report Status
                         </a>
                     </li>
@@ -247,7 +247,7 @@
         <div class="row form-group">
           <div class="col-lg-6">
             <label>COMPLEXION</text></label>
-              <input type="text" class="form-control" name="complexion" placeholder="Enter skin color" required>
+              <input type="text" class="form-control" name="complexion" placeholder="Enter skin color">
           </div>   
           <div class="col-lg-6">
             <label>BUILD</text></label>
@@ -385,7 +385,7 @@
               <input type="text" class="form-control" name="agency" placeholder="">
           </div>
           <div class="col-lg-6">
-              <input type="hidden" name="username" value="<?php echo $_SESSION['name'] . " ". $_SESSION['surname'];?>">
+              <input type="hidden" name="username" value="<?php echo $_SESSION['username'] ;?>">
           </div>   
         </div>
                 
