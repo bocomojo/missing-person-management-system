@@ -36,6 +36,7 @@ $phone = $_POST['phone'];
 $relation = $_POST['relation'];
 $agency = $_POST['agency'];
 $username = $_POST['username'];
+$notification = $_POST['notification'];
 // variables for notifcications
 // session_start();
 // $username = $_POST['username'];
@@ -43,8 +44,8 @@ $username = $_POST['username'];
 // $viewed = 0;
 // $name = $fullname;
 
-$sql = "INSERT INTO reports (fullname,alias,address,bday,smt,gender,race,recentphoto,height,weight,haircolor,hairstate,eyecolor,eyestate,prostet,blood,cloth,defect,lastloc,others,filed_date,case_num,comp_name,comp_address,phone,relation,agency,last_seen_date,username,age)
-VALUES('$fullname','$alias','$address','$bday','$smt','$gender','$race','$location','$height','$weight','$haircolor','$hairstate','$eyecolor','$eyestate','$prostet','$blood','$cloth','$defect','$lastloc','$others',NOW(),'$case_num','$comp_name','$comp_address','$phone','$relation','$agency','$last_seen_date', '$username','$age')";
+$sql = "INSERT INTO reports (fullname,alias,address,bday,smt,gender,race,recentphoto,height,weight,haircolor,hairstate,eyecolor,eyestate,prostet,blood,cloth,defect,lastloc,others,filed_date,case_num,comp_name,comp_address,phone,relation,agency,last_seen_date,username,age,notification)
+VALUES('$fullname','$alias','$address','$bday','$smt','$gender','$race','$location','$height','$weight','$haircolor','$hairstate','$eyecolor','$eyestate','$prostet','$blood','$cloth','$defect','$lastloc','$others',NOW(),'$case_num','$comp_name','$comp_address','$phone','$relation','$agency','$last_seen_date', '$username','$age','$notification')";
 
 
 // $sqli = "INSERT INTO notification (request_id,username,status,viewed,name) VALUES ('$last_id','$username','$status','$viewed','$name')";

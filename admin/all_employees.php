@@ -47,7 +47,7 @@
                     <li>
                         <a href="view_found_person.php">
                             <i class="fa fa-table"></i>
-                            View Found Persons &nbsp;&nbsp;<?php echo $found;?>  
+                            View Found Persons  
                         </a>
                     </li>   
                    
@@ -117,7 +117,7 @@
                     <li>
                         <a href="archives.php">
                             <i class="fa fa-table"></i>
-                            Archives &nbsp;&nbsp;<?php echo $archives;?>
+                            Archives
                         </a>
                     </li>
                     <?php }?>

@@ -1,5 +1,6 @@
 <?php require_once('includes/session.php');
       require_once('includes/conn.php');
+      require_once('check.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -136,10 +137,16 @@
                         </a>
                     </li>
                     <?php } ?>
-                    <li class="active">
+                    <li>
                         <a href="status.php">
-                            <i class="fa fa-gear"></i>
+                            <i class="fa fa-question"></i>
                             Report Status
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="notification.php">
+                            <i class="fa fa-bell"></i>
+                            Notification &nbsp;&nbsp;<?php echo $notification;?>
                         </a>
                     </li>
                     <li>
@@ -198,10 +205,11 @@
                     <?php
                         $a=1;
                         $username = $_SESSION['username'];
-                    $query=mysqli_query($mysqli,"select * from `reports` where username = '$username'");
+                        $sql = "SELECT * FROM reports WHERE username='$username' AND notification=1";
+                    $query=mysqli_query($mysqli,$sql);
                      while($row=mysqli_fetch_array($query))
                         {
-                        
+                            $id = $row['id'];
                           
                           ?>
                           <tr>
@@ -226,9 +234,7 @@
                                 echo 'Rejected';
                             }?></td>
                           <td>
-                  <a href="function/archive.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-danger"><span class="fa fa-times"></span> Status</a>
-                   || 
-                  <a href="view_report_details.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-warning"><span class="fa fa-pencil"></span> Viewed</a> 
+                  <a href="function/notification.php?id=<?php echo $id; ?>" data-toggle="modal" class="btn btn-primary"><span class="fa fa-eye"></span> Mark as viewed</a> 
                               </td>
                           </tr>
                           <?php

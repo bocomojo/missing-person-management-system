@@ -13,7 +13,7 @@ if (isset($_GET['id'])) {
 
 $id = $_GET['id'];
 
-$sql="UPDATE reports SET status = '1', accepted_by = '$username', accepted_date = '$dateToday', position = '$position' WHERE id=$id";
+$sql="UPDATE reports SET status = '1', notification = '1', accepted_by = '$username', accepted_date = '$dateToday', position = '$position' WHERE id=$id";
 // $sqli="UPDATE notification SET status = '1' WHERE request_id=$id";
 
     if ($mysqli->query($sql) === true) 

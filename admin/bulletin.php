@@ -234,7 +234,7 @@ $(function () {
                     <li>
                         <a href="archives.php">
                             <i class="fa fa-table"></i>
-                            Archives &nbsp;&nbsp;<?php echo $archives;?>
+                            Archives
                         </a>
                     </li>
                     <?php }?>

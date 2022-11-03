@@ -1,4 +1,5 @@
-<?php
+<?php require_once('includes/session.php');
+      require_once('check.php');
   //total counts
   $sql1 ="SELECT count(id) As total FROM users";
       $result1=mysqli_query($mysqli,$sql1);
@@ -12,10 +13,11 @@
       $result3=mysqli_query($mysqli,$sql3);
       $values=mysqli_fetch_assoc($result3);
       $requests=$values['total3'];
-  $sql4 ="SELECT count(id) As total4 FROM reports WHERE status=5";
+$username = $_SESSION['username'];
+  $sql4 ="SELECT count(id) As total4 FROM reports WHERE username='$username' AND notification=1";
       $result4=mysqli_query($mysqli,$sql4);
       $values=mysqli_fetch_assoc($result4);
-      $archives=$values['total4'];
+      $notification=$values['total4'];
   $sql5 ="SELECT count(id) As total5 FROM reports WHERE status=3";
       $result5=mysqli_query($mysqli,$sql5);
       $values=mysqli_fetch_assoc($result5);
@@ -28,6 +30,10 @@
       $result7=mysqli_query($mysqli,$sql7);
       $values=mysqli_fetch_assoc($result7);
       $found=$values['total7'];
+  $sql8 ="SELECT count(id) As total8 FROM reports WHERE status=5";
+      $result8=mysqli_query($mysqli,$sql8);
+      $values=mysqli_fetch_assoc($result8);
+      $archives=$values['total8'];
 
 //total graph data
 
