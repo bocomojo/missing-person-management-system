@@ -143,7 +143,7 @@
                     ?>
                     <li>
                         <a href="notification.php">
-                            <i class="fa fa-cog"></i>
+                            <i class="fa fa-bell"></i>
                             Report Status
                         </a>
                     </li>

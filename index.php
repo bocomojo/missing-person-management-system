@@ -36,8 +36,8 @@ body {font-size:16px;}
     <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
     <a href="#personnel" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Personnel</a> 
     <a href="#system-design" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">System Design</a> 
-    <a href="#system-manual" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">System Manual</a> 
-    <a href="#missing-person-bulletin" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Missing Person Bulletin</a> 
+    <!-- <a href="#system-manual" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">System Manual</a> 
+    <a href="#missing-person-bulletin" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Missing Person Bulletin</a>  -->
     <!-- <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a> -->
     <br>
     <br>
@@ -64,9 +64,7 @@ body {font-size:16px;}
     <hr style="width:50px;border:5px solid red" class="w3-round">
   </div>
   <p>The best team in the world.</p>
-    <p>We are lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
-    incididunt ut labore et quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    <p align="justify">The municipality of Camalig is a first class municipality in the province of Albay, Philippines. According to the 2020 census, it had a population of 72,042 people. Camalig is located at the Southern part of Mayon Volcano bounded by the towns of Daraga on the East; Guinobatan on the West; and Jovellar on the South. The town has fifty barangays with seven classified as urban and forty three are rural. It has total land area of 13, 088 hectares. Camalig has only one Police Station which is located in Barangay 2, Poblacion, Camalig, Albay.
     </p>
   <!-- Personnel Photo -->
   <div class="container">
@@ -128,13 +126,11 @@ body {font-size:16px;}
   <div class="w3-container" id="system-design" style="margin-top:75px">
     <h1 class="w3-xxxlarge w3-text-red"><b>System Design</b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
-    <p>The best team in the world.</p>
-    <p>We are lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
-    incididunt ut labore et quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    <p>The system design.</p>
+    <p align="justify">The entity includes the complainant, desk officer, and PRC personnel. The complainant is responsible for providing evidence to determine if they are in fact the person they are claiming to be such as name, address, contact details, photograph, and relation to the missing person. The desk officer will be the one to receive the reports. They are responsible for verifying if the missing person has a match under the found person category and if there is a match, the desk officer shall inform the complainant where the found person is located. They are to update the database by tagging the missing person as “located”. If the person has returned or has been located, basic information shall remain in file for reference. In case the person remains missing, the municipal PCR personnel shall request written authorization from the complainant to post the details on the online bulletin.
     </p>
     <div id="myCarousel-system-design" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
+       <!-- Indicators  -->
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -143,7 +139,7 @@ body {font-size:16px;}
         <li data-target="#myCarousel" data-slide-to="4"></li>
       </ol>
   
-      <!-- Wrapper for slides -->
+      <!-- Wrapper for slides  -->
       <div class="carousel-inner">
         <div class="item active">
           <img src="images/display/dashboard.PNG" alt="" style="width:100%; height: 700px;">
@@ -178,7 +174,7 @@ body {font-size:16px;}
     </div>
   </div>
   
-  <!-- System Manual -->
+  <!-- System Manual
   <div class="w3-container" id="system-manual" style="margin-top:75px">
     <h1 class="w3-xxxlarge w3-text-red"><b>System Manual</b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
@@ -188,7 +184,7 @@ body {font-size:16px;}
     incididunt ut labore et quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     </p>
     <p><b>Our system-manual are thoughtfully chosen</b>:</p>
-  </div>
+  </div> -->
 
   <!-- The Team
   <div class="w3-row-padding w3-grayscale">
@@ -223,13 +219,6 @@ body {font-size:16px;}
       </div>
     </div>
   </div> -->
-
-  <!-- Missing-Person-Bulletin -->
-  <div class="w3-container" id="missing-person-bulletin" style="margin-top:75px">
-    <h1 class="w3-xxxlarge w3-text-red"><b>Missing Person Bulletin.</b></h1>
-    <hr style="width:50px;border:5px solid red" class="w3-round">
-    <p>Some text our prices. Lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure</p>
-  </div>
 
   <!-- <div class="w3-row-padding">
     <div class="w3-half w3-margin-bottom">
@@ -295,7 +284,7 @@ body {font-size:16px;}
 </div>
 
 <!-- W3.CSS Container -->
-<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></p></div>
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Copyright <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">2022</a></p></div>
 
 <script>
 // Script to open and close sidebar
@@ -320,40 +309,3 @@ function onClick(element) {
 <script>$('.carousel').carousel()</script>
 </body>
 </html>
-
-<div class="cards">
-      <?php
-    $sql= mysqli_query($mysqli,"SELECT * FROM reports WHERE status=1 ORDER BY id ASC");
-    if (!empty($sql)) { 
-        while ($row=mysqli_fetch_array($sql)) {
-        $id = $row['id'];
-    ?>
-  
-<div class="card" style="border-radius: 5px; overflow: hidden;">
-    <?php
-    if($_SESSION['permission']==1  or $_SESSION['permission']==2 ){
-    ?>
-    <a href="view_report_details.php?id=<?php echo $id; ?>">   
-    <img src="assets/image/missing_person/<?php echo $row["recentphoto"]; ?>" alt="Avatar" style="width:100%" class="photo">
-    </a>
-    <?php } else if ($_SESSION['permission']==3) { ?>
-        <a href="view_details.php?id=<?php echo $id; ?>">   
-    <img src="assets/image/missing_person/<?php echo $row["recentphoto"]; ?>" alt="Avatar" style="width:100%" class="photo">
-    </a>
-    <?php } ?>
-  <div class="containers">
-    <h4><b><?php echo $row["fullname"]; ?></b></h4> 
-    <p>Age: <?php echo $row["age"]; ?></p>
-    <p>Sex: <?php echo $row["gender"]; ?></p> 
-    <p>Last seen date:<br> <?php $date = date_create($row["last_seen_date"]); echo date_format($date, "F d, Y h:i:s A"); ?></p>  
-  </div>
-</div> 
-
-<?php
-        }
-    }  else {
-
-     echo "No Records."; 
-
-    }
-    ?>

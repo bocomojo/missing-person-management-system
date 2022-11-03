@@ -44,7 +44,7 @@ VALUES('$name','$surname','$address','$email','$phone','$gender','$username','us
 if($mysqli->query($sql) === TRUE){
 
 
-echo "<script>alert('Successfully Added!!!'); window.location='../login.php'</script>";
+echo "<script>alert('Successfully Registered!!!'); window.location='../login.php'</script>";
 }
 
 else

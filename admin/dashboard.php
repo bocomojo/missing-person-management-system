@@ -70,7 +70,7 @@ $(function () {
             },
             labels: {
                 items: [{
-                    html: 'Total fruit consumption',
+                    html: 'Total missing person reports',
                     style: {
                         left: '40px',
                         top: '8px',
@@ -266,7 +266,7 @@ $(function () {
                     ?>
                     <li>
                         <a href="notification.php">
-                            <i class="fa fa-cog"></i>
+                            <i class="fa fa-bell"></i>
                             Report Status
                         </a>
                     </li>
