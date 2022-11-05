@@ -374,8 +374,8 @@ $(function () {
                                     <i class="fa fa-link fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge"><?php echo $archives;?></div>
-                                    <div>Total Number Of Archive</div>
+                                    <div class="huge"><?php echo $total_missing_person;?></div>
+                                    <div>Total Number Of Missing Person</div>
                                 </div>
                             </div>
                         </div>

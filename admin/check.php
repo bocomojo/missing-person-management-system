@@ -34,6 +34,10 @@ $username = $_SESSION['username'];
       $result8=mysqli_query($mysqli,$sql8);
       $values=mysqli_fetch_assoc($result8);
       $archives=$values['total8'];
+  $sql9 ="SELECT count(id) As total9 FROM reports WHERE status=3";
+      $result9=mysqli_query($mysqli,$sql9);
+      $values=mysqli_fetch_assoc($result9);
+      $total_missing_person=$values['total9'];
 
 //total graph data
 

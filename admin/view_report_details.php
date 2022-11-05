@@ -651,7 +651,7 @@
                          ?>
             </div>
             <center>
-            <button class="btn btn-primary fa fa-download" onclick="printDiv('printArea')"> &nbsp;Download this form</button><br><br>
+            <button class="btn btn-primary" onclick="printDiv('printArea')"><span class="fa fa-download"></span> &nbsp;Download this form</button><br><br>
             </center>
             
                 </div>
